@@ -2,8 +2,6 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="WorkflowMM" nsURI="http://www.dmss.es/WorkflowMM" nsPrefix="WorkflowMM">
   <eClassifiers xsi:type="ecore:EClass" name="Workflow">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" lowerBound="1" upperBound="-1"
-        eType="#//Task" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actors" lowerBound="1"
         upperBound="-1" eType="#//Actor" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -13,15 +11,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" lowerBound="1" upperBound="-1"
-        eType="#//Task" eOpposite="#//Task/actor"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Task" abstract="true">
+        eType="#//Task" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="informations" upperBound="-1"
         eType="#//Information" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actor" lowerBound="1" eType="#//Actor"
-        eOpposite="#//Actor/tasks"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" lowerBound="1"
@@ -30,21 +26,14 @@
         upperBound="2" eType="#//Task" eOpposite="#//Task/linkedTo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UserTask" eSuperTypes="#//Task"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceTask" eSuperTypes="#//Task">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ServiceType"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceTask" eSuperTypes="#//Task"/>
   <eClassifiers xsi:type="ecore:EClass" name="SendMsgTask" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tasksToDo" lowerBound="1"
         upperBound="-1" eType="#//Task"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataFrom" upperBound="-1"
         eType="#//Task"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" lowerBound="1"
-        eType="#//ReceiveMsgTask" eOpposite="#//ReceiveMsgTask/sender"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReceiveMsgTask" eSuperTypes="#//Task">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sender" lowerBound="1"
-        eType="#//SendMsgTask" eOpposite="#//SendMsgTask/receiver"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReceiveMsgTask" eSuperTypes="#//Task"/>
   <eClassifiers xsi:type="ecore:EClass" name="Information">
     <eStructuralFeatures xsi:type="ecore:EReference" name="options" upperBound="-1"
         eType="#//Option" containment="true"/>
@@ -52,8 +41,6 @@
         eType="#//File" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//TypeOfData"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOutput" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Option">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -63,12 +50,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ServiceType">
-    <eLiterals name="PRINT_DOCUMENT"/>
-    <eLiterals name="SIGN_DOCUMENT" value="1"/>
-    <eLiterals name="VALIDATE_DATA" value="2"/>
-    <eLiterals name="MAKE_CALCULATION" value="3"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TypeOfData">
     <eLiterals name="FILL_FORM"/>
     <eLiterals name="SELECT_OPTIONS" value="1"/>
@@ -76,4 +57,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Begin" eSuperTypes="#//Task"/>
   <eClassifiers xsi:type="ecore:EClass" name="End" eSuperTypes="#//Task"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ST_PrintDocument" eSuperTypes="#//ServiceTask"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ST_SignDocument" eSuperTypes="#//ServiceTask"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ST_ValidateData" eSuperTypes="#//ServiceTask"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ST_MakeCalculation" eSuperTypes="#//ServiceTask"/>
 </ecore:EPackage>
