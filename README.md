@@ -4,10 +4,12 @@ The statement of the project can be found in a PDF file, called DMSS1819Project.
 
 
 ## TO-DO list
+1. Move Information.data to a new class, which Information groups it.
+2. Add relationships from different tasks to information.
+3. UserTask requires Information, ServiceTask requires and produces, and SendTask requires (optionally) information.
+
+## Check list
 1. OCL: "Send and Receive" must belong to different users.
-2. Move Information.data to a new class, which Information groups it.
-3. Add relationships from different tasks to information.
-4. OCL: UserTask requires Information, ServiceTask requires and produces, and SendTask requires (optionally) information.
 
 ## Known bugs
 - None (yet)  
