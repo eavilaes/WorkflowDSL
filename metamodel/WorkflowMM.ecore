@@ -4,11 +4,6 @@
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
   </eAnnotations>
-  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
-    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
-    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
-  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Workflow">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actors" lowerBound="1"
         upperBound="-1" eType="#//Actor" containment="true"/>
@@ -33,19 +28,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedFrom" lowerBound="1"
         upperBound="2" eType="#//Task" eOpposite="#//Task/linkedTo"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UserTask" eSuperTypes="#//Task"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceTask" eSuperTypes="#//Task"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UserTask" eSuperTypes="#//Task">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requires" lowerBound="1"
+        upperBound="-1" eType="#//Information"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceTask" eSuperTypes="#//Task">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requires" lowerBound="1"
+        upperBound="-1" eType="#//Information"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="produces" lowerBound="1"
+        upperBound="-1" eType="#//Information"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SendMsgTask" eSuperTypes="#//Task">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="tasksToDoMustBeFromDifferentUser"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="tasksToDoMustBeFromDifferentUser" value="&#x9;-- Send and Receive tasks must belong to different users.&#xA;&#x9;&#x9;&#x9;self.tasksToDo->forAll(t:Task|t.oclContainer &lt;> self.oclContainer)"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tasksToDo" lowerBound="1"
-        upperBound="-1" eType="#//Task"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dataFrom" upperBound="-1"
-        eType="#//Task"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destination" lowerBound="1"
+        eType="#//ReceiveMsgTask"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requires" upperBound="-1"
+        eType="#//Information"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReceiveMsgTask" eSuperTypes="#//Task"/>
   <eClassifiers xsi:type="ecore:EClass" name="Information">
