@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkflowMM:Workflow
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:WorkflowMM="http://www.dmss.es/WorkflowMM"
+    xsi:schemaLocation="http://www.dmss.es/WorkflowMM ../metamodel/WorkflowMM.ecore"
+    name="PizzaDelivery">
+  <actors name="Customer">
+    <tasks xsi:type="WorkflowMM:Begin"
+        name="Begin"
+        description="Begin tag of the workflow"
+        linkedTo="//@actors.0/@tasks.1"/>
+    <tasks xsi:type="WorkflowMM:UserTask"
+        id="1"
+        name="Select a pizza"
+        description="The user must fill in a form to select a pizza"
+        linkedTo="//@actors.0/@tasks.2"
+        linkedFrom="//@actors.0/@tasks.0"
+        requires="//@actors.0/@informations.0"/>
+    <tasks xsi:type="WorkflowMM:UserTask"
+        id="2"
+        name="Fill personal info"
+        description="The user must fill in his personal info"
+        linkedTo="//@actors.0/@tasks.3"
+        linkedFrom="//@actors.0/@tasks.1"
+        requires="//@actors.0/@informations.2"/>
+    <tasks xsi:type="WorkflowMM:ST_MakeCalculation"
+        id="3"
+        name="Calculate total amount"
+        description="Calculate the final amount to be paid"
+        linkedTo="//@actors.0/@tasks.4"
+        linkedFrom="//@actors.0/@tasks.2"
+        requires="//@actors.0/@informations.0 //@actors.0/@informations.2"
+        produces="//@actors.0/@informations.3"/>
+    <tasks xsi:type="WorkflowMM:SendMsgTask"
+        id="4"
+        name="Send pizza order"
+        description="Send the pizza order to the restaurant"
+        linkedFrom="//@actors.0/@tasks.3"
+        destination="//@actors.1/@tasks.0"/>
+    <tasks xsi:type="WorkflowMM:ReceiveMsgTask"
+        id="8"
+        name="Receive notification"
+        description="Receive a notification when the pizza is ready"
+        linkedTo="//@actors.0/@tasks.6"/>
+    <tasks xsi:type="WorkflowMM:UserTask"
+        id="9"
+        name="Satisfaction questionnaire"
+        description="The user fills in a satisfaction questionnaire"
+        linkedTo="//@actors.0/@tasks.7"
+        linkedFrom="//@actors.0/@tasks.5"
+        requires="//@actors.0/@informations.3"/>
+    <tasks xsi:type="WorkflowMM:End"
+        id="10"
+        name="End"
+        description="End tag of the workflow"
+        linkedFrom="//@actors.0/@tasks.6"/>
+    <informations
+        type="SELECT_OPTIONS">
+      <options
+          title="Carbonara"/>
+      <options
+          id="1"
+          title="Barbeque"/>
+      <options
+          id="2"
+          title="Margherita"/>
+    </informations>
+    <informations>
+      <datas
+          text="Satisfaction degree"/>
+    </informations>
+    <informations>
+      <datas
+          text="Name"/>
+      <datas
+          id="1"
+          text="Address"/>
+      <datas
+          id="2"
+          text="Credit card"/>
+    </informations>
+    <informations>
+      <datas
+          text="Result"/>
+    </informations>
+  </actors>
+  <actors id="1"
+      name="Pizza Restaurant">
+    <tasks xsi:type="WorkflowMM:ReceiveMsgTask"
+        id="5"
+        name="Receive pizza order"
+        description="The restaurant receives a pizza order"
+        linkedTo="//@actors.1/@tasks.1"/>
+    <tasks xsi:type="WorkflowMM:ST_PrintDocument"
+        id="6"
+        name="Print pizza order"
+        description="Print the pizza order to be cooked"
+        linkedTo="//@actors.1/@tasks.2"
+        linkedFrom="//@actors.1/@tasks.0"
+        requires="//@actors.0/@informations.0 //@actors.0/@informations.1"
+        produces="//@actors.1/@informations.0"/>
+    <tasks xsi:type="WorkflowMM:SendMsgTask"
+        id="7"
+        name="Notify customer"
+        description="Notify the customer when his pizza is ready"
+        linkedFrom="//@actors.1/@tasks.1"
+        destination="//@actors.0/@tasks.5"/>
+    <informations>
+      <files
+          path="C:/Users/Pizzeria/orders/1.pdf"/>
+    </informations>
+  </actors>
+</WorkflowMM:Workflow>
