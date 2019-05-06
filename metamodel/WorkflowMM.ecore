@@ -23,10 +23,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" lowerBound="1"
-        upperBound="2" eType="#//Task" eOpposite="#//Task/linkedFrom"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedFrom" lowerBound="1"
-        upperBound="2" eType="#//Task" eOpposite="#//Task/linkedTo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" upperBound="2"
+        eType="#//Task" eOpposite="#//Task/linkedFrom"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedFrom" upperBound="2"
+        eType="#//Task" eOpposite="#//Task/linkedTo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UserTask" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requires" lowerBound="1"
@@ -53,6 +53,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//TypeOfData"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="datas" upperBound="-1"
         eType="#//Data" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Option">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -66,6 +67,8 @@
     <eLiterals name="FILL_FORM"/>
     <eLiterals name="SELECT_OPTIONS" value="1"/>
     <eLiterals name="UPLOAD_FILES" value="2"/>
+    <eLiterals name="TEXT" value="3"/>
+    <eLiterals name="FILE" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Begin" eSuperTypes="#//Task"/>
   <eClassifiers xsi:type="ecore:EClass" name="End" eSuperTypes="#//Task"/>
