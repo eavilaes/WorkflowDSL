@@ -11,11 +11,12 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Workflow">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="OnlyOneBeginTag OnlyOneEndTag"/>
+      <details key="constraints" value="OnlyOneBeginTag OnlyOneEndTag TaskIdMustBeUnique"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="OnlyOneBeginTag" value="&#xA;&#x9;&#x9;&#x9;self.actors.tasks->select(T:Task| T.oclIsTypeOf(Begin))->size()=1"/>
       <details key="OnlyOneEndTag" value="&#xA;&#x9;&#x9;&#x9;self.actors.tasks->select(T:Task| T.oclIsTypeOf(End))->size()=1"/>
+      <details key="TaskIdMustBeUnique" value="&#xA;&#x9;&#x9;&#x9;self.actors.tasks->forAll(t1, t2 : Task | t1&lt;>t2 implies t1.id&lt;>t2.id)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actors" lowerBound="1"
         upperBound="-1" eType="#//Actor" containment="true"/>
