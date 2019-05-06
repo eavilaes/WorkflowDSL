@@ -45,10 +45,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" upperBound="2"
-        eType="#//Task" eOpposite="#//Task/linkedFrom"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedFrom" upperBound="2"
-        eType="#//Task" eOpposite="#//Task/linkedTo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" eType="#//Task"
+        eOpposite="#//Task/linkedFrom"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkedFrom" eType="#//Task"
+        eOpposite="#//Task/linkedTo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UserTask" eSuperTypes="#//Task">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requires" lowerBound="1"
