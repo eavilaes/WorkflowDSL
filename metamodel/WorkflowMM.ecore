@@ -11,12 +11,15 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Workflow">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="OnlyOneBeginTag OnlyOneEndTag TaskIdMustBeUnique"/>
+      <details key="constraints" value="OnlyOneBeginTag OnlyOneEndTag TaskIdMustBeUnique DataIdMustBeUnique OptionIdMustBeUnique FileIdMustBeUnique"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="OnlyOneBeginTag" value="&#xA;&#x9;&#x9;&#x9;self.actors.tasks->select(T:Task| T.oclIsTypeOf(Begin))->size()=1"/>
       <details key="OnlyOneEndTag" value="&#xA;&#x9;&#x9;&#x9;self.actors.tasks->select(T:Task| T.oclIsTypeOf(End))->size()=1"/>
       <details key="TaskIdMustBeUnique" value="&#xA;&#x9;&#x9;&#x9;self.actors.tasks->forAll(t1, t2 : Task | t1&lt;>t2 implies t1.id&lt;>t2.id)"/>
+      <details key="DataIdMustBeUnique" value="&#xA;&#x9;&#x9;&#x9;self.actors.informations.datas->forAll(d1, d2 : Data | d1&lt;>d2 implies d1.id&lt;>d2.id)"/>
+      <details key="OptionIdMustBeUnique" value="&#xA;&#x9;&#x9;&#x9;self.actors.informations.options->forAll(o1, o2 : Option | o1&lt;>o2 implies o1.id&lt;>o2.id)"/>
+      <details key="FileIdMustBeUnique" value="&#xA;&#x9;&#x9;&#x9;self.actors.informations.files->forAll(f1, f2 : File | f1&lt;>f2 implies f1.id&lt;>f2.id)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actors" lowerBound="1"
         upperBound="-1" eType="#//Actor" containment="true"/>
