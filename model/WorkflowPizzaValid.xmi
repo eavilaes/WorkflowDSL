@@ -5,9 +5,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:WorkflowMM="http://www.dmss.es/WorkflowMM"
     xsi:schemaLocation="http://www.dmss.es/WorkflowMM ../metamodel/WorkflowMM.ecore"
-    name="PizzaDelivery">
-  <actors name="Customer">
+    id="0" name="PizzaDelivery">
+  <actors id="0"
+      name="Customer">
     <tasks xsi:type="WorkflowMM:Begin"
+        id="0"
         name="Begin"
         description="Begin tag of the workflow"
         linkedTo="//@actors.0/@tasks.1"/>
@@ -57,10 +59,11 @@
         description="End tag of the workflow"
         linkedFrom="//@actors.0/@tasks.6"/>
     <informations
+        id="1"
         type="SELECT_OPTIONS"
         name="type of pizza form">
       <options
-      	  id="0"
+          id="0"
           title="Carbonara"/>
       <options
           id="1"
@@ -70,24 +73,30 @@
           title="Margherita"/>
     </informations>
     <informations
+        id="2"
         name="satisfaction form">
       <datas
+          id="0"
           text="Satisfaction degree"/>
     </informations>
     <informations
+        id="2"
         name="personal data form">
       <datas
+          id="1"
           text="Name"/>
       <datas
-          id="1"
+          id="2"
           text="Address"/>
       <datas
-          id="2"
+          id="3"
           text="Credit card"/>
     </informations>
     <informations
+        id="3"
         name="result data form">
       <datas
+          id="4"
           text="Result"/>
     </informations>
   </actors>
@@ -113,8 +122,10 @@
         linkedFrom="//@actors.1/@tasks.1"
         destination="//@actors.0/@tasks.5"/>
     <informations
+        id="3"
         name="order file">
       <files
+          id="0"
           path="C:/Users/Pizzeria/orders/1.pdf"/>
     </informations>
   </actors>
