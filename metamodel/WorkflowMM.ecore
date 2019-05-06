@@ -51,6 +51,12 @@
         upperBound="-1" eType="#//Information"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SendMsgTask" eSuperTypes="#//Task">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="SendMsgTaskAndReceiveMsgTaskMustBelongToDifferentUsers"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="SendMsgTaskAndReceiveMsgTaskMustBelongToDifferentUsers" value="&#xA;&#x9;&#x9;&#x9;self.oclContainer&lt;>self.destination.oclContainer"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" lowerBound="1"
         eType="#//ReceiveMsgTask"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requires" upperBound="-1"

@@ -4,14 +4,13 @@ The statement of the project can be found in a PDF file, called DMSS1819Project.
 
 
 ## TO-DO list
-2. OCL: "Send and Receive" must belong to different users.
-3. OCL: The ID of each task must be unique in the whole workflow.
-4. OCL: The "linked to" link must be to a tag of the same actor.
-5. OCL: Information.TypeOfData = FILL FORM can have only Data, SELECT OPTIONS can have only Option, and UPLOAD FILES can have only File.
-6. OCL: The ID of the option in a SELECT_OPTIONS must be unique.
-7. OCL: The ID of the data in a FILL_FORM must be unique.
-8. OCL: The ID of the file in a UPLOAD_FILES must be unique.
-9. OCL: Add restrictions to the linkedFrom and linkedTo links.
+1. OCL: The ID of each task must be unique in the whole workflow.
+2. OCL: The "linked to" link must be to a tag of the same actor.
+3. OCL: Information.TypeOfData = FILL FORM can have only Data, SELECT OPTIONS can have only Option, and UPLOAD FILES can have only File.
+4. OCL: The ID of the option in a SELECT_OPTIONS must be unique.
+5. OCL: The ID of the data in a FILL_FORM must be unique.
+6. OCL: The ID of the file in a UPLOAD_FILES must be unique.
+7. OCL: Add restrictions to the linkedFrom and linkedTo links.
 
 ## Check list
 
