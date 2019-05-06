@@ -230,7 +230,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_bgl6I1vUEem265QhYXItqw"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_bglTEVvUEem265QhYXItqw" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bglTElvUEem265QhYXItqw" x="20" y="15" width="120" height="100"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bglTElvUEem265QhYXItqw" x="20" y="15" width="120" height="123"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_HpHHcFvWEem265QhYXItqw" type="2003" element="_Ho99gFvWEem265QhYXItqw">
           <children xmi:type="notation:Node" xmi:id="_HpHHc1vWEem265QhYXItqw" type="5007"/>

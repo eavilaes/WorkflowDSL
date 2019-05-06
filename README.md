@@ -4,7 +4,6 @@ The statement of the project can be found in a PDF file, called DMSS1819Project.
 
 
 ## TO-DO list
-1. OCL: There must be one and only one Begin and End tasks in a workflow.
 2. OCL: "Send and Receive" must belong to different users.
 3. OCL: The ID of each task must be unique in the whole workflow.
 4. OCL: The "linked to" link must be to a tag of the same actor.

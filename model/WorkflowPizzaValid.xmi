@@ -57,7 +57,8 @@
         description="End tag of the workflow"
         linkedFrom="//@actors.0/@tasks.6"/>
     <informations
-        type="SELECT_OPTIONS">
+        type="SELECT_OPTIONS"
+        name="type of pizza form">
       <options
           title="Carbonara"/>
       <options
@@ -67,11 +68,13 @@
           id="2"
           title="Margherita"/>
     </informations>
-    <informations>
+    <informations
+        name="satisfaction form">
       <datas
           text="Satisfaction degree"/>
     </informations>
-    <informations>
+    <informations
+        name="personal data form">
       <datas
           text="Name"/>
       <datas
@@ -81,7 +84,8 @@
           id="2"
           text="Credit card"/>
     </informations>
-    <informations>
+    <informations
+        name="result data form">
       <datas
           text="Result"/>
     </informations>
@@ -107,7 +111,8 @@
         description="Notify the customer when his pizza is ready"
         linkedFrom="//@actors.1/@tasks.1"
         destination="//@actors.0/@tasks.5"/>
-    <informations>
+    <informations
+        name="order file">
       <files
           path="C:/Users/Pizzeria/orders/1.pdf"/>
     </informations>
