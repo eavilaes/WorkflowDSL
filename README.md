@@ -8,6 +8,7 @@ The statement of the project can be found in a PDF file, called DMSS1819Project.
 2. OCL: Add restrictions to the linkedFrom and linkedTo links.
 
 ## Check list
+1. Create an invalid model and test it against the invariants.
 
 ## Known bugs
 - None (yet)  
