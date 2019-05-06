@@ -60,6 +60,7 @@
         type="SELECT_OPTIONS"
         name="type of pizza form">
       <options
+      	  id="0"
           title="Carbonara"/>
       <options
           id="1"
