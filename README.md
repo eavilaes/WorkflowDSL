@@ -5,7 +5,6 @@ The statement of the project can be found in a PDF file, called DMSS1819Project.
 
 ## TO-DO list
 1. OCL: Information.TypeOfData = FILL FORM can have only Data, SELECT OPTIONS can have only Option, and UPLOAD FILES can have only File.
-2. OCL: Add restrictions to the linkedFrom and linkedTo links.
 
 ## Check list
 1. Create an invalid model and test it against the invariants.
