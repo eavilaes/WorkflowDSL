@@ -2,3 +2,9 @@ html {
   background-color: lightgray;
   color: black;
 }
+.header h1, h2, h3 {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  margin: 0px;
+}
