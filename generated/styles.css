@@ -3,8 +3,33 @@ html {
   color: black;
 }
 .header h1, h2, h3 {
-  color: white;
   font-weight: 600;
   text-align: center;
   margin: 0px;
+}
+body{
+  background-color:white;
+  border-radius:10px;
+  min-height: 250px;  
+}
+.body{
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+  padding: 10px;
+}
+.form{
+  background-color: lightcoral;
+  padding: 10px; 
+  border-radius: 10px; 
+}
+.form-element{
+  margin-top:1%;
+  margin-bottom:1%;
+}
+.next-button{
+  border-radius: 5px; 
+  background-color: white; 
+  border-style: none; 
+  color:lightcoral;
 }

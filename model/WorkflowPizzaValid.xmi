@@ -27,20 +27,22 @@
         linkedTo="//@actors.0/@tasks.3"
         linkedFrom="//@actors.0/@tasks.1"
         requires="//@actors.0/@informations.2"/>
-    <tasks xsi:type="WorkflowMM:ST_MakeCalculation"
-        id="3"
-        name="Calculate total amount"
-        description="Calculate the final amount to be paid"
+    <tasks xsi:type="WorkflowMM:ServiceTask"
+        id="04"
+        name="Calculate total"
+        description="Calculate total amount"
         linkedTo="//@actors.0/@tasks.4"
         linkedFrom="//@actors.0/@tasks.2"
-        requires="//@actors.0/@informations.0 //@actors.0/@informations.2"
-        produces="//@actors.0/@informations.3"/>
+        requires="//@actors.0/@informations.4 //@actors.0/@informations.1"
+        produces="//@actors.1/@informations.0"/>
     <tasks xsi:type="WorkflowMM:SendMsgTask"
         id="4"
         name="Send pizza order"
         description="Send the pizza order to the restaurant"
+        linkedTo="//@actors.1/@tasks.0"
         linkedFrom="//@actors.0/@tasks.3"
-        destination="//@actors.1/@tasks.0"/>
+        destination="//@actors.1/@tasks.0"
+        nextTask="//@actors.0/@tasks.5"/>
     <tasks xsi:type="WorkflowMM:ReceiveMsgTask"
         id="8"
         name="Receive notification"
@@ -53,15 +55,23 @@
         linkedTo="//@actors.0/@tasks.7"
         linkedFrom="//@actors.0/@tasks.5"
         requires="//@actors.0/@informations.3"/>
+    <tasks xsi:type="WorkflowMM:UserTask"
+        id="890"
+        name="Upload Documents"
+        description="Upload documents"
+        linkedTo="//@actors.0/@tasks.8"
+        linkedFrom="//@actors.0/@tasks.6"
+        requires="//@actors.0/@informations.4"/>
     <tasks xsi:type="WorkflowMM:End"
         id="10"
         name="End"
         description="End tag of the workflow"
-        linkedFrom="//@actors.0/@tasks.6"/>
+        linkedFrom="//@actors.0/@tasks.7"/>
     <informations
         id="1"
         type="SELECT_OPTIONS"
-        name="type of pizza form">
+        name="type of pizza form"
+        multiple="true">
       <options
           id="0"
           title="Carbonara"/>
@@ -84,13 +94,16 @@
         name="personal data form">
       <datas
           id="1"
-          text="Name"/>
+          text="Name"
+          name="Name"/>
       <datas
           id="2"
-          text="Address"/>
+          text="Address"
+          name="Address"/>
       <datas
           id="3"
-          text="Credit card"/>
+          text="Credit card"
+          name="Credit Card"/>
     </informations>
     <informations
         id="3"
@@ -99,6 +112,19 @@
           id="4"
           text="Result"/>
     </informations>
+    <informations
+        id="10"
+        type="UPLOAD_FILES"
+        name="Documents">
+      <files
+          id="007"
+          path=""
+          title="DNI"/>
+      <files
+          id="008"
+          path=""
+          title="Credit Card"/>
+    </informations>
   </actors>
   <actors id="1"
       name="Pizza Restaurant">
@@ -106,7 +132,8 @@
         id="5"
         name="Receive pizza order"
         description="The restaurant receives a pizza order"
-        linkedTo="//@actors.1/@tasks.1"/>
+        linkedTo="//@actors.1/@tasks.1"
+        linkedFrom="//@actors.0/@tasks.4"/>
     <tasks xsi:type="WorkflowMM:ST_PrintDocument"
         id="6"
         name="Print pizza order"
@@ -123,6 +150,7 @@
         destination="//@actors.0/@tasks.5"/>
     <informations
         id="3"
+        type="UPLOAD_FILES"
         name="order file">
       <files
           id="0"
