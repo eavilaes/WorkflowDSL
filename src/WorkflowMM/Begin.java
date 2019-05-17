@@ -10,7 +10,7 @@ package WorkflowMM;
  *
  *
  * @see WorkflowMM.WorkflowMMPackage#getBegin()
- * @model
+ * @model annotation="gmf.node label='name' label.icon='false' color='50,250,50'"
  * @generated
  */
 public interface Begin extends Task {

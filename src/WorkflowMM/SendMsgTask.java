@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link WorkflowMM.SendMsgTask#getDestination <em>Destination</em>}</li>
  *   <li>{@link WorkflowMM.SendMsgTask#getRequires <em>Requires</em>}</li>
+ *   <li>{@link WorkflowMM.SendMsgTask#getNextTask <em>Next Task</em>}</li>
  * </ul>
  *
  * @see WorkflowMM.WorkflowMMPackage#getSendMsgTask()
@@ -35,6 +36,7 @@ public interface SendMsgTask extends Task {
 	 * @see #setDestination(ReceiveMsgTask)
 	 * @see WorkflowMM.WorkflowMMPackage#getSendMsgTask_Destination()
 	 * @model required="true"
+	 *        annotation="gmf.link label='destination' target.decoration='arrow' color='255,255,55'"
 	 * @generated
 	 */
 	ReceiveMsgTask getDestination();
@@ -60,9 +62,36 @@ public interface SendMsgTask extends Task {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requires</em>' reference list.
 	 * @see WorkflowMM.WorkflowMMPackage#getSendMsgTask_Requires()
-	 * @model
+	 * @model annotation="gmf.link label='req' target.decoration='arrow' color='255,0,0'"
 	 * @generated
 	 */
 	EList<Information> getRequires();
+
+	/**
+	 * Returns the value of the '<em><b>Next Task</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Next Task</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Next Task</em>' reference.
+	 * @see #setNextTask(Task)
+	 * @see WorkflowMM.WorkflowMMPackage#getSendMsgTask_NextTask()
+	 * @model required="true"
+	 *        annotation="gmf.link label='next task' target.decoration='arrow' color='0,0,0' style='dash'"
+	 * @generated
+	 */
+	Task getNextTask();
+
+	/**
+	 * Sets the value of the '{@link WorkflowMM.SendMsgTask#getNextTask <em>Next Task</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Next Task</em>' reference.
+	 * @see #getNextTask()
+	 * @generated
+	 */
+	void setNextTask(Task value);
 
 } // SendMsgTask

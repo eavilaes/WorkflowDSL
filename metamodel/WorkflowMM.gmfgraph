@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="WorkflowMM">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="TaskLinkedToFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="TaskLinkedFromFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="UserTaskRequiresFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ServiceTaskRequiresFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ServiceTaskProducesFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="SendMsgTaskDestinationFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="SendMsgTaskRequiresFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="SendMsgTaskNextTaskFigureTargetDecoration"/>
+    <descriptors name="ActorFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ActorFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="200" green="200" blue="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ActorLabelFigure" text="Actor">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Label" name="ActorIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ActorTasksCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="ActorInformationsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureActorLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureActorIdLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors accessor="getActorTasksCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.2"/>
+      <accessors accessor="getActorInformationsCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.3"/>
+    </descriptors>
+    <descriptors name="UserTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="UserTaskFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="255"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="UserTaskLabelFigure" text="UserTask"/>
+        <children xsi:type="gmfgraph:Label" name="TaskIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="TaskDescriptionLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureUserTaskLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureTaskIdLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureTaskDescriptionLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="ServiceTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ServiceTaskFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="255"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ServiceTaskLabelFigure" text="ServiceTask"/>
+        <children xsi:type="gmfgraph:Label" name="TaskIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="TaskDescriptionLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureServiceTaskLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureTaskIdLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureTaskDescriptionLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="SendMsgTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SendMsgTaskFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="255"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="SendMsgTaskLabelFigure" text="SendMsgTask"/>
+        <children xsi:type="gmfgraph:Label" name="TaskIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="TaskDescriptionLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureSendMsgTaskLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureTaskIdLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureTaskDescriptionLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="ReceiveMsgTaskFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ReceiveMsgTaskFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="255"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ReceiveMsgTaskLabelFigure" text="ReceiveMsgTask"/>
+        <children xsi:type="gmfgraph:Label" name="TaskIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="TaskDescriptionLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureReceiveMsgTaskLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureTaskIdLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureTaskDescriptionLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="InformationFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="InformationFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="150" green="200" blue="255"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="InformationLabelFigure" text="Information">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Label" name="InformationIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="InformationTypeLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="InformationMultipleLabelFigure"/>
+        <children xsi:type="gmfgraph:Rectangle" name="InformationOptionsCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="InformationFilesCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="InformationDatasCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureInformationLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureInformationIdLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureInformationTypeLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.2"/>
+      <accessors accessor="getFigureInformationMultipleLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.3"/>
+      <accessors accessor="getInformationOptionsCompartmentFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.4"/>
+      <accessors accessor="getInformationFilesCompartmentFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.5"/>
+      <accessors accessor="getInformationDatasCompartmentFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.6"/>
+    </descriptors>
+    <descriptors name="OptionFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="OptionFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="100" green="150" blue="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="OptionLabelFigure" text="Option"/>
+        <children xsi:type="gmfgraph:Label" name="OptionIdLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureOptionLabelFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureOptionIdLabelFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="FileFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="FileFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="100" green="150" blue="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="FileLabelFigure" text="File"/>
+        <children xsi:type="gmfgraph:Label" name="FileIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="FilePathLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureFileLabelFigure" figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureFileIdLabelFigure" figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureFilePathLabelFigure" figure="//@figures.0/@descriptors.7/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="BeginFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="BeginFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="50" green="250" blue="50"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="BeginLabelFigure" text="Begin"/>
+        <children xsi:type="gmfgraph:Label" name="TaskIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="TaskDescriptionLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureBeginLabelFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureTaskIdLabelFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureTaskDescriptionLabelFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="EndFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="EndFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="250" green="50" blue="50"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="EndLabelFigure" text="End"/>
+        <children xsi:type="gmfgraph:Label" name="TaskIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="TaskDescriptionLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureEndLabelFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureTaskIdLabelFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureTaskDescriptionLabelFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="ST_PrintDocumentFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ST_PrintDocumentFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="255"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ST_PrintDocumentLabelFigure" text="ST_PrintDocument"/>
+        <children xsi:type="gmfgraph:Label" name="TaskIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="TaskDescriptionLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureST_PrintDocumentLabelFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureTaskIdLabelFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureTaskDescriptionLabelFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="ST_SignDocumentFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ST_SignDocumentFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="255"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ST_SignDocumentLabelFigure" text="ST_SignDocument"/>
+        <children xsi:type="gmfgraph:Label" name="TaskIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="TaskDescriptionLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureST_SignDocumentLabelFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureTaskIdLabelFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureTaskDescriptionLabelFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="ST_ValidateDataFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ST_ValidateDataFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="255"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ST_ValidateDataLabelFigure" text="ST_ValidateData"/>
+        <children xsi:type="gmfgraph:Label" name="TaskIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="TaskDescriptionLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureST_ValidateDataLabelFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureTaskIdLabelFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureTaskDescriptionLabelFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="ST_MakeCalculationFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ST_MakeCalculationFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="255"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ST_MakeCalculationLabelFigure" text="ST_MakeCalculation"/>
+        <children xsi:type="gmfgraph:Label" name="TaskIdLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="TaskDescriptionLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureST_MakeCalculationLabelFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureTaskIdLabelFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureTaskDescriptionLabelFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="DataFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DataFigure">
+        <backgroundColor xsi:type="gmfgraph:RGBColor" red="100" green="150" blue="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="DataLabelFigure" text="Data"/>
+        <children xsi:type="gmfgraph:Label" name="DataIdLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureDataLabelFigure" figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureDataIdLabelFigure" figure="//@figures.0/@descriptors.14/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="TaskLinkedToFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TaskLinkedToFigure" targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="TaskLinkedToExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="TaskLinkedToExternalLabel"/>
+    </descriptors>
+    <descriptors name="TaskLinkedFromFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TaskLinkedFromFigure" targetDecoration="//@figures.0/@figures.1">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="255"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="TaskLinkedFromExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="TaskLinkedFromExternalLabel"/>
+    </descriptors>
+    <descriptors name="UserTaskRequiresFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="UserTaskRequiresFigure" targetDecoration="//@figures.0/@figures.2">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="255"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="UserTaskRequiresExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="UserTaskRequiresExternalLabel" text="req"/>
+    </descriptors>
+    <descriptors name="ServiceTaskRequiresFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ServiceTaskRequiresFigure" targetDecoration="//@figures.0/@figures.3">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="255"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ServiceTaskRequiresExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ServiceTaskRequiresExternalLabel" text="req"/>
+    </descriptors>
+    <descriptors name="ServiceTaskProducesFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ServiceTaskProducesFigure" targetDecoration="//@figures.0/@figures.4">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" green="255"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ServiceTaskProducesExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ServiceTaskProducesExternalLabel" text="prod"/>
+    </descriptors>
+    <descriptors name="SendMsgTaskDestinationFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="SendMsgTaskDestinationFigure" targetDecoration="//@figures.0/@figures.5">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="55"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="SendMsgTaskDestinationExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="SendMsgTaskDestinationExternalLabel" text="destination"/>
+    </descriptors>
+    <descriptors name="SendMsgTaskRequiresFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="SendMsgTaskRequiresFigure" targetDecoration="//@figures.0/@figures.6">
+        <foregroundColor xsi:type="gmfgraph:RGBColor" red="255"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="SendMsgTaskRequiresExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="SendMsgTaskRequiresExternalLabel" text="req"/>
+    </descriptors>
+    <descriptors name="SendMsgTaskNextTaskFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="SendMsgTaskNextTaskFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.7">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="SendMsgTaskNextTaskExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="SendMsgTaskNextTaskExternalLabel" text="next task"/>
+    </descriptors>
+  </figures>
+  <nodes name="Actor" figure="ActorFigure"/>
+  <nodes name="UserTask" figure="UserTaskFigure"/>
+  <nodes name="ServiceTask" figure="ServiceTaskFigure"/>
+  <nodes name="SendMsgTask" figure="SendMsgTaskFigure"/>
+  <nodes name="ReceiveMsgTask" figure="ReceiveMsgTaskFigure"/>
+  <nodes name="Information" figure="InformationFigure"/>
+  <nodes name="Option" figure="OptionFigure"/>
+  <nodes name="File" figure="FileFigure"/>
+  <nodes name="Begin" figure="BeginFigure"/>
+  <nodes name="End" figure="EndFigure"/>
+  <nodes name="ST_PrintDocument" figure="ST_PrintDocumentFigure"/>
+  <nodes name="ST_SignDocument" figure="ST_SignDocumentFigure"/>
+  <nodes name="ST_ValidateData" figure="ST_ValidateDataFigure"/>
+  <nodes name="ST_MakeCalculation" figure="ST_MakeCalculationFigure"/>
+  <nodes name="Data" figure="DataFigure"/>
+  <connections name="TaskLinkedTo" figure="TaskLinkedToFigure"/>
+  <connections name="TaskLinkedFrom" figure="TaskLinkedFromFigure"/>
+  <connections name="UserTaskRequires" figure="UserTaskRequiresFigure"/>
+  <connections name="ServiceTaskRequires" figure="ServiceTaskRequiresFigure"/>
+  <connections name="ServiceTaskProduces" figure="ServiceTaskProducesFigure"/>
+  <connections name="SendMsgTaskDestination" figure="SendMsgTaskDestinationFigure"/>
+  <connections name="SendMsgTaskRequires" figure="SendMsgTaskRequiresFigure"/>
+  <connections name="SendMsgTaskNextTask" figure="SendMsgTaskNextTaskFigure"/>
+  <compartments name="ActorTasksCompartment" figure="ActorFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.2"/>
+  <compartments name="ActorInformationsCompartment" figure="ActorFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.3"/>
+  <compartments name="InformationOptionsCompartment" figure="InformationFigure" collapsible="true" accessor="//@figures.0/@descriptors.5/@accessors.4"/>
+  <compartments name="InformationFilesCompartment" figure="InformationFigure" collapsible="true" accessor="//@figures.0/@descriptors.5/@accessors.5"/>
+  <compartments name="InformationDatasCompartment" figure="InformationFigure" collapsible="true" accessor="//@figures.0/@descriptors.5/@accessors.6"/>
+  <labels name="ActorLabel" figure="ActorFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="ActorIdLabel" figure="ActorFigure" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels name="UserTaskLabel" figure="UserTaskFigure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="TaskIdLabel" figure="UserTaskFigure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels name="TaskDescriptionLabel" figure="UserTaskFigure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+  <labels name="ServiceTaskLabel" figure="ServiceTaskFigure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="TaskIdLabel" figure="ServiceTaskFigure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+  <labels name="TaskDescriptionLabel" figure="ServiceTaskFigure" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.2"/>
+  <labels name="SendMsgTaskLabel" figure="SendMsgTaskFigure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="TaskIdLabel" figure="SendMsgTaskFigure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
+  <labels name="TaskDescriptionLabel" figure="SendMsgTaskFigure" elementIcon="false" accessor="//@figures.0/@descriptors.3/@accessors.2"/>
+  <labels name="ReceiveMsgTaskLabel" figure="ReceiveMsgTaskFigure" elementIcon="false" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="TaskIdLabel" figure="ReceiveMsgTaskFigure" elementIcon="false" accessor="//@figures.0/@descriptors.4/@accessors.1"/>
+  <labels name="TaskDescriptionLabel" figure="ReceiveMsgTaskFigure" elementIcon="false" accessor="//@figures.0/@descriptors.4/@accessors.2"/>
+  <labels name="InformationLabel" figure="InformationFigure" elementIcon="false" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+  <labels name="InformationIdLabel" figure="InformationFigure" elementIcon="false" accessor="//@figures.0/@descriptors.5/@accessors.1"/>
+  <labels name="InformationTypeLabel" figure="InformationFigure" elementIcon="false" accessor="//@figures.0/@descriptors.5/@accessors.2"/>
+  <labels name="InformationMultipleLabel" figure="InformationFigure" elementIcon="false" accessor="//@figures.0/@descriptors.5/@accessors.3"/>
+  <labels name="OptionLabel" figure="OptionFigure" elementIcon="false" accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+  <labels name="OptionIdLabel" figure="OptionFigure" elementIcon="false" accessor="//@figures.0/@descriptors.6/@accessors.1"/>
+  <labels name="FileLabel" figure="FileFigure" elementIcon="false" accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+  <labels name="FileIdLabel" figure="FileFigure" elementIcon="false" accessor="//@figures.0/@descriptors.7/@accessors.1"/>
+  <labels name="FilePathLabel" figure="FileFigure" elementIcon="false" accessor="//@figures.0/@descriptors.7/@accessors.2"/>
+  <labels name="BeginLabel" figure="BeginFigure" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+  <labels name="TaskIdLabel" figure="BeginFigure" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+  <labels name="TaskDescriptionLabel" figure="BeginFigure" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.2"/>
+  <labels name="EndLabel" figure="EndFigure" elementIcon="false" accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+  <labels name="TaskIdLabel" figure="EndFigure" elementIcon="false" accessor="//@figures.0/@descriptors.9/@accessors.1"/>
+  <labels name="TaskDescriptionLabel" figure="EndFigure" elementIcon="false" accessor="//@figures.0/@descriptors.9/@accessors.2"/>
+  <labels name="ST_PrintDocumentLabel" figure="ST_PrintDocumentFigure" elementIcon="false" accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+  <labels name="TaskIdLabel" figure="ST_PrintDocumentFigure" elementIcon="false" accessor="//@figures.0/@descriptors.10/@accessors.1"/>
+  <labels name="TaskDescriptionLabel" figure="ST_PrintDocumentFigure" elementIcon="false" accessor="//@figures.0/@descriptors.10/@accessors.2"/>
+  <labels name="ST_SignDocumentLabel" figure="ST_SignDocumentFigure" elementIcon="false" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+  <labels name="TaskIdLabel" figure="ST_SignDocumentFigure" elementIcon="false" accessor="//@figures.0/@descriptors.11/@accessors.1"/>
+  <labels name="TaskDescriptionLabel" figure="ST_SignDocumentFigure" elementIcon="false" accessor="//@figures.0/@descriptors.11/@accessors.2"/>
+  <labels name="ST_ValidateDataLabel" figure="ST_ValidateDataFigure" elementIcon="false" accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+  <labels name="TaskIdLabel" figure="ST_ValidateDataFigure" elementIcon="false" accessor="//@figures.0/@descriptors.12/@accessors.1"/>
+  <labels name="TaskDescriptionLabel" figure="ST_ValidateDataFigure" elementIcon="false" accessor="//@figures.0/@descriptors.12/@accessors.2"/>
+  <labels name="ST_MakeCalculationLabel" figure="ST_MakeCalculationFigure" elementIcon="false" accessor="//@figures.0/@descriptors.13/@accessors.0"/>
+  <labels name="TaskIdLabel" figure="ST_MakeCalculationFigure" elementIcon="false" accessor="//@figures.0/@descriptors.13/@accessors.1"/>
+  <labels name="TaskDescriptionLabel" figure="ST_MakeCalculationFigure" elementIcon="false" accessor="//@figures.0/@descriptors.13/@accessors.2"/>
+  <labels name="DataLabel" figure="DataFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.0"/>
+  <labels name="DataIdLabel" figure="DataFigure" elementIcon="false" accessor="//@figures.0/@descriptors.14/@accessors.1"/>
+  <labels name="TaskLinkedToExternalLabel" figure="TaskLinkedToExternalLabelFigure" elementIcon="false"/>
+  <labels name="TaskLinkedFromExternalLabel" figure="TaskLinkedFromExternalLabelFigure" elementIcon="false"/>
+  <labels name="UserTaskRequiresExternalLabel" figure="UserTaskRequiresExternalLabelFigure" elementIcon="false"/>
+  <labels name="ServiceTaskRequiresExternalLabel" figure="ServiceTaskRequiresExternalLabelFigure" elementIcon="false"/>
+  <labels name="ServiceTaskProducesExternalLabel" figure="ServiceTaskProducesExternalLabelFigure" elementIcon="false"/>
+  <labels name="SendMsgTaskDestinationExternalLabel" figure="SendMsgTaskDestinationExternalLabelFigure" elementIcon="false"/>
+  <labels name="SendMsgTaskRequiresExternalLabel" figure="SendMsgTaskRequiresExternalLabelFigure" elementIcon="false"/>
+  <labels name="SendMsgTaskNextTaskExternalLabel" figure="SendMsgTaskNextTaskExternalLabelFigure" elementIcon="false"/>
+</gmfgraph:Canvas>

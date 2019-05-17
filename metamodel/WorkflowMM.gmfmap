@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfmap:Mapping
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:gmfmap="http://www.eclipse.org/gmf/2008/mappings"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <nodes>
+    <containmentFeature
+        href="WorkflowMM.ecore#//Workflow/actors"/>
+    <ownedChild
+        relatedDiagrams="//@diagram">
+      <domainMetaElement
+          href="WorkflowMM.ecore#//Actor"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="WorkflowMM.gmfgraph#ActorLabel"/>
+        <features
+            href="WorkflowMM.ecore#//Actor/name"/>
+      </labelMappings>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern="id: {0}"
+          editorPattern="id: {0}"
+          editPattern="id: {0}">
+        <diagramLabel
+            href="WorkflowMM.gmfgraph#ActorIdLabel"/>
+        <features
+            href="WorkflowMM.ecore#//Actor/id"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.0"/>
+      <diagramNode
+          href="WorkflowMM.gmfgraph#Actor"/>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="WorkflowMM.ecore#//Actor/tasks"/>
+        <ownedChild>
+          <domainMetaElement
+              href="WorkflowMM.ecore#//ST_PrintDocument"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#ST_PrintDocumentLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="id: {0}"
+              editorPattern="id: {0}"
+              editPattern="id: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskIdLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/id"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="desc: {0}"
+              editorPattern="desc: {0}"
+              editPattern="desc: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskDescriptionLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/description"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.9"/>
+          <diagramNode
+              href="WorkflowMM.gmfgraph#ST_PrintDocument"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="WorkflowMM.ecore#//Actor/tasks"/>
+        <ownedChild>
+          <domainMetaElement
+              href="WorkflowMM.ecore#//ST_SignDocument"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#ST_SignDocumentLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="id: {0}"
+              editorPattern="id: {0}"
+              editPattern="id: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskIdLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/id"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="desc: {0}"
+              editorPattern="desc: {0}"
+              editPattern="desc: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskDescriptionLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/description"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.10"/>
+          <diagramNode
+              href="WorkflowMM.gmfgraph#ST_SignDocument"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="WorkflowMM.ecore#//Actor/tasks"/>
+        <ownedChild>
+          <domainMetaElement
+              href="WorkflowMM.ecore#//ST_ValidateData"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#ST_ValidateDataLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="id: {0}"
+              editorPattern="id: {0}"
+              editPattern="id: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskIdLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/id"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="desc: {0}"
+              editorPattern="desc: {0}"
+              editPattern="desc: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskDescriptionLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/description"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.11"/>
+          <diagramNode
+              href="WorkflowMM.gmfgraph#ST_ValidateData"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="WorkflowMM.ecore#//Actor/tasks"/>
+        <ownedChild>
+          <domainMetaElement
+              href="WorkflowMM.ecore#//ST_MakeCalculation"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#ST_MakeCalculationLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="id: {0}"
+              editorPattern="id: {0}"
+              editPattern="id: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskIdLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/id"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="desc: {0}"
+              editorPattern="desc: {0}"
+              editPattern="desc: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskDescriptionLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/description"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.8"/>
+          <diagramNode
+              href="WorkflowMM.gmfgraph#ST_MakeCalculation"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="WorkflowMM.ecore#//Actor/tasks"/>
+        <ownedChild>
+          <domainMetaElement
+              href="WorkflowMM.ecore#//UserTask"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#UserTaskLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="id: {0}"
+              editorPattern="id: {0}"
+              editPattern="id: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskIdLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/id"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="desc: {0}"
+              editorPattern="desc: {0}"
+              editPattern="desc: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskDescriptionLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/description"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.14"/>
+          <diagramNode
+              href="WorkflowMM.gmfgraph#UserTask"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="WorkflowMM.ecore#//Actor/tasks"/>
+        <ownedChild>
+          <domainMetaElement
+              href="WorkflowMM.ecore#//ServiceTask"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#ServiceTaskLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="id: {0}"
+              editorPattern="id: {0}"
+              editPattern="id: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskIdLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/id"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="desc: {0}"
+              editorPattern="desc: {0}"
+              editPattern="desc: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskDescriptionLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/description"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.13"/>
+          <diagramNode
+              href="WorkflowMM.gmfgraph#ServiceTask"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="WorkflowMM.ecore#//Actor/tasks"/>
+        <ownedChild>
+          <domainMetaElement
+              href="WorkflowMM.ecore#//SendMsgTask"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#SendMsgTaskLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="id: {0}"
+              editorPattern="id: {0}"
+              editPattern="id: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskIdLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/id"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="desc: {0}"
+              editorPattern="desc: {0}"
+              editPattern="desc: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskDescriptionLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/description"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.12"/>
+          <diagramNode
+              href="WorkflowMM.gmfgraph#SendMsgTask"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="WorkflowMM.ecore#//Actor/tasks"/>
+        <ownedChild>
+          <domainMetaElement
+              href="WorkflowMM.ecore#//ReceiveMsgTask"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#ReceiveMsgTaskLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="id: {0}"
+              editorPattern="id: {0}"
+              editPattern="id: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskIdLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/id"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="desc: {0}"
+              editorPattern="desc: {0}"
+              editPattern="desc: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskDescriptionLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/description"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.7"/>
+          <diagramNode
+              href="WorkflowMM.gmfgraph#ReceiveMsgTask"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="WorkflowMM.ecore#//Actor/tasks"/>
+        <ownedChild>
+          <domainMetaElement
+              href="WorkflowMM.ecore#//Begin"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#BeginLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="id: {0}"
+              editorPattern="id: {0}"
+              editPattern="id: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskIdLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/id"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="desc: {0}"
+              editorPattern="desc: {0}"
+              editPattern="desc: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskDescriptionLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/description"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.1"/>
+          <diagramNode
+              href="WorkflowMM.gmfgraph#Begin"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0">
+        <containmentFeature
+            href="WorkflowMM.ecore#//Actor/tasks"/>
+        <ownedChild>
+          <domainMetaElement
+              href="WorkflowMM.ecore#//End"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#EndLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="id: {0}"
+              editorPattern="id: {0}"
+              editPattern="id: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskIdLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/id"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="desc: {0}"
+              editorPattern="desc: {0}"
+              editPattern="desc: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#TaskDescriptionLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Task/description"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.3"/>
+          <diagramNode
+              href="WorkflowMM.gmfgraph#End"/>
+        </ownedChild>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.1">
+        <containmentFeature
+            href="WorkflowMM.ecore#//Actor/informations"/>
+        <ownedChild
+            relatedDiagrams="//@diagram">
+          <domainMetaElement
+              href="WorkflowMM.ecore#//Information"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#InformationLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Information/name"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="id: {0}"
+              editorPattern="id: {0}"
+              editPattern="id: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#InformationIdLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Information/id"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#InformationTypeLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Information/type"/>
+          </labelMappings>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping"
+              viewPattern="multiple: {0}"
+              editorPattern="multiple: {0}"
+              editPattern="multiple: {0}">
+            <diagramLabel
+                href="WorkflowMM.gmfgraph#InformationMultipleLabel"/>
+            <features
+                href="WorkflowMM.ecore#//Information/multiple"/>
+          </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.5"/>
+          <diagramNode
+              href="WorkflowMM.gmfgraph#Information"/>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.10/@ownedChild/@compartments.0">
+            <containmentFeature
+                href="WorkflowMM.ecore#//Information/options"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="WorkflowMM.ecore#//Option"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="WorkflowMM.gmfgraph#OptionLabel"/>
+                <features
+                    href="WorkflowMM.ecore#//Option/title"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  viewPattern="id: {0}"
+                  editorPattern="id: {0}"
+                  editPattern="id: {0}">
+                <diagramLabel
+                    href="WorkflowMM.gmfgraph#OptionIdLabel"/>
+                <features
+                    href="WorkflowMM.ecore#//Option/id"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.6"/>
+              <diagramNode
+                  href="WorkflowMM.gmfgraph#Option"/>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.10/@ownedChild/@compartments.1">
+            <containmentFeature
+                href="WorkflowMM.ecore#//Information/files"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="WorkflowMM.ecore#//File"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="WorkflowMM.gmfgraph#FileLabel"/>
+                <features
+                    href="WorkflowMM.ecore#//File/title"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  viewPattern="id: {0}"
+                  editorPattern="id: {0}"
+                  editPattern="id: {0}">
+                <diagramLabel
+                    href="WorkflowMM.gmfgraph#FileIdLabel"/>
+                <features
+                    href="WorkflowMM.ecore#//File/id"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  viewPattern="path: {0}"
+                  editorPattern="path: {0}"
+                  editPattern="path: {0}">
+                <diagramLabel
+                    href="WorkflowMM.gmfgraph#FilePathLabel"/>
+                <features
+                    href="WorkflowMM.ecore#//File/path"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.4"/>
+              <diagramNode
+                  href="WorkflowMM.gmfgraph#File"/>
+            </ownedChild>
+          </children>
+          <children
+              compartment="//@nodes.0/@ownedChild/@children.10/@ownedChild/@compartments.2">
+            <containmentFeature
+                href="WorkflowMM.ecore#//Information/datas"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="WorkflowMM.ecore#//Data"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="WorkflowMM.gmfgraph#DataLabel"/>
+                <features
+                    href="WorkflowMM.ecore#//Data/name"/>
+              </labelMappings>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  viewPattern="id: {0}"
+                  editorPattern="id: {0}"
+                  editPattern="id: {0}">
+                <diagramLabel
+                    href="WorkflowMM.gmfgraph#DataIdLabel"/>
+                <features
+                    href="WorkflowMM.ecore#//Data/id"/>
+              </labelMappings>
+              <tool
+                  xsi:type="gmftool:CreationTool"
+                  href="WorkflowMM.gmftool#//@palette/@tools.0/@tools.2"/>
+              <diagramNode
+                  href="WorkflowMM.gmfgraph#Data"/>
+            </ownedChild>
+          </children>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.10/@ownedChild/@children.0">
+            <compartment
+                href="WorkflowMM.gmfgraph#InformationOptionsCompartment"/>
+          </compartments>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.10/@ownedChild/@children.1">
+            <compartment
+                href="WorkflowMM.gmfgraph#InformationFilesCompartment"/>
+          </compartments>
+          <compartments
+              children="//@nodes.0/@ownedChild/@children.10/@ownedChild/@children.2">
+            <compartment
+                href="WorkflowMM.gmfgraph#InformationDatasCompartment"/>
+          </compartments>
+        </ownedChild>
+      </children>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3 //@nodes.0/@ownedChild/@children.4 //@nodes.0/@ownedChild/@children.5 //@nodes.0/@ownedChild/@children.6 //@nodes.0/@ownedChild/@children.7 //@nodes.0/@ownedChild/@children.8 //@nodes.0/@ownedChild/@children.9">
+        <compartment
+            href="WorkflowMM.gmfgraph#ActorTasksCompartment"/>
+      </compartments>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.10">
+        <compartment
+            href="WorkflowMM.gmfgraph#ActorInformationsCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="WorkflowMM.gmfgraph#TaskLinkedToExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="WorkflowMM.gmftool#//@palette/@tools.1/@tools.2"/>
+    <diagramLink
+        href="WorkflowMM.gmfgraph#TaskLinkedTo"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="WorkflowMM.ecore#//Task/linkedTo"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="WorkflowMM.gmfgraph#TaskLinkedFromExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="WorkflowMM.gmftool#//@palette/@tools.1/@tools.1"/>
+    <diagramLink
+        href="WorkflowMM.gmfgraph#TaskLinkedFrom"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="WorkflowMM.ecore#//Task/linkedFrom"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="WorkflowMM.gmfgraph#UserTaskRequiresExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="WorkflowMM.gmftool#//@palette/@tools.1/@tools.5"/>
+    <diagramLink
+        href="WorkflowMM.gmfgraph#UserTaskRequires"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="WorkflowMM.ecore#//UserTask/requires"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="WorkflowMM.gmfgraph#ServiceTaskRequiresExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="WorkflowMM.gmftool#//@palette/@tools.1/@tools.6"/>
+    <diagramLink
+        href="WorkflowMM.gmfgraph#ServiceTaskRequires"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="WorkflowMM.ecore#//ServiceTask/requires"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="WorkflowMM.gmfgraph#ServiceTaskProducesExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="WorkflowMM.gmftool#//@palette/@tools.1/@tools.4"/>
+    <diagramLink
+        href="WorkflowMM.gmfgraph#ServiceTaskProduces"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="WorkflowMM.ecore#//ServiceTask/produces"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="WorkflowMM.gmfgraph#SendMsgTaskDestinationExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="WorkflowMM.gmftool#//@palette/@tools.1/@tools.0"/>
+    <diagramLink
+        href="WorkflowMM.gmfgraph#SendMsgTaskDestination"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="WorkflowMM.ecore#//SendMsgTask/destination"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="WorkflowMM.gmfgraph#SendMsgTaskRequiresExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="WorkflowMM.gmftool#//@palette/@tools.1/@tools.7"/>
+    <diagramLink
+        href="WorkflowMM.gmfgraph#SendMsgTaskRequires"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="WorkflowMM.ecore#//SendMsgTask/requires"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="WorkflowMM.gmfgraph#SendMsgTaskNextTaskExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="WorkflowMM.gmftool#//@palette/@tools.1/@tools.3"/>
+    <diagramLink
+        href="WorkflowMM.gmfgraph#SendMsgTaskNextTask"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="WorkflowMM.ecore#//SendMsgTask/nextTask"/>
+  </links>
+  <diagram>
+    <diagramCanvas
+        href="WorkflowMM.gmfgraph#WorkflowMM"/>
+    <domainModel
+        href="WorkflowMM.ecore#/"/>
+    <domainMetaElement
+        href="WorkflowMM.ecore#//Workflow"/>
+    <palette
+        href="WorkflowMM.gmftool#//@palette"/>
+  </diagram>
+</gmfmap:Mapping>

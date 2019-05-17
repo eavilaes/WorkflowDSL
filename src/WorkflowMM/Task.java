@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='TaskMustBeLinkedToTheSameActor'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot TaskMustBeLinkedToTheSameActor='\n\t\t\tnot self.oclIsTypeOf(SendMsgTask) and not self.oclIsTypeOf(ReceiveMsgTask) and not self.oclIsTypeOf(End) implies self.oclContainer = self.linkedTo.oclContainer'"
+ *        annotation="gmf.node label='name' label.icon='false' color='255,255,255'"
  * @generated
  */
 public interface Task extends EObject {
@@ -39,6 +40,7 @@ public interface Task extends EObject {
 	 * @see #setId(String)
 	 * @see WorkflowMM.WorkflowMMPackage#getTask_Id()
 	 * @model required="true"
+	 *        annotation="gmf.label label.pattern='id: {0}'"
 	 * @generated
 	 */
 	String getId();
@@ -91,6 +93,7 @@ public interface Task extends EObject {
 	 * @see #setDescription(String)
 	 * @see WorkflowMM.WorkflowMMPackage#getTask_Description()
 	 * @model required="true"
+	 *        annotation="gmf.label label.pattern='desc: {0}'"
 	 * @generated
 	 */
 	String getDescription();
@@ -119,6 +122,7 @@ public interface Task extends EObject {
 	 * @see WorkflowMM.WorkflowMMPackage#getTask_LinkedTo()
 	 * @see WorkflowMM.Task#getLinkedFrom
 	 * @model opposite="linkedFrom"
+	 *        annotation="gmf.link target.decoration='arrow' color='0,0,0'"
 	 * @generated
 	 */
 	Task getLinkedTo();
@@ -147,6 +151,7 @@ public interface Task extends EObject {
 	 * @see WorkflowMM.WorkflowMMPackage#getTask_LinkedFrom()
 	 * @see WorkflowMM.Task#getLinkedTo
 	 * @model opposite="linkedTo"
+	 *        annotation="gmf.link target.decoration='arrow' color='255,255,255'"
 	 * @generated
 	 */
 	Task getLinkedFrom();

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -39,11 +40,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link WorkflowMM.impl.InformationImpl#getType <em>Type</em>}</li>
  *   <li>{@link WorkflowMM.impl.InformationImpl#getDatas <em>Datas</em>}</li>
  *   <li>{@link WorkflowMM.impl.InformationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link WorkflowMM.impl.InformationImpl#isMultiple <em>Multiple</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class InformationImpl extends MinimalEObjectImpl.Container implements Information {
+public class InformationImpl extends EObjectImpl implements Information {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -133,6 +135,26 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isMultiple() <em>Multiple</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isMultiple()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean MULTIPLE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isMultiple() <em>Multiple</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isMultiple()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean multiple = MULTIPLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,6 +279,27 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isMultiple() {
+		return multiple;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMultiple(boolean newMultiple) {
+		boolean oldMultiple = multiple;
+		multiple = newMultiple;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkflowMMPackage.INFORMATION__MULTIPLE, oldMultiple, multiple));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -290,6 +333,8 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 				return getDatas();
 			case WorkflowMMPackage.INFORMATION__NAME:
 				return getName();
+			case WorkflowMMPackage.INFORMATION__MULTIPLE:
+				return isMultiple();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -324,6 +369,9 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 			case WorkflowMMPackage.INFORMATION__NAME:
 				setName((String)newValue);
 				return;
+			case WorkflowMMPackage.INFORMATION__MULTIPLE:
+				setMultiple((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -354,6 +402,9 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 			case WorkflowMMPackage.INFORMATION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case WorkflowMMPackage.INFORMATION__MULTIPLE:
+				setMultiple(MULTIPLE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -378,6 +429,8 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 				return datas != null && !datas.isEmpty();
 			case WorkflowMMPackage.INFORMATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case WorkflowMMPackage.INFORMATION__MULTIPLE:
+				return multiple != MULTIPLE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -398,6 +451,8 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 		result.append(type);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", multiple: ");
+		result.append(multiple);
 		result.append(')');
 		return result.toString();
 	}

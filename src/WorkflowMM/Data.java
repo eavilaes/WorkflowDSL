@@ -15,10 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link WorkflowMM.Data#getId <em>Id</em>}</li>
  *   <li>{@link WorkflowMM.Data#getText <em>Text</em>}</li>
+ *   <li>{@link WorkflowMM.Data#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see WorkflowMM.WorkflowMMPackage#getData()
- * @model
+ * @model annotation="gmf.node label='name' label.icon='false' color='100,150,200'"
  * @generated
  */
 public interface Data extends EObject {
@@ -34,6 +35,7 @@ public interface Data extends EObject {
 	 * @see #setId(String)
 	 * @see WorkflowMM.WorkflowMMPackage#getData_Id()
 	 * @model required="true"
+	 *        annotation="gmf.label label.pattern='id: {0}'"
 	 * @generated
 	 */
 	String getId();
@@ -73,5 +75,31 @@ public interface Data extends EObject {
 	 * @generated
 	 */
 	void setText(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see WorkflowMM.WorkflowMMPackage#getData_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link WorkflowMM.Data#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // Data

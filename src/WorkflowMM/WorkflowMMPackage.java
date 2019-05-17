@@ -70,31 +70,13 @@ public interface WorkflowMMPackage extends EPackage {
 	int WORKFLOW = 0;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKFLOW__ID = 0;
-
-	/**
 	 * The feature id for the '<em><b>Actors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORKFLOW__ACTORS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKFLOW__NAME = 2;
+	int WORKFLOW__ACTORS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Workflow</em>' class.
@@ -103,16 +85,7 @@ public interface WorkflowMMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORKFLOW_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Workflow</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORKFLOW_OPERATION_COUNT = 0;
+	int WORKFLOW_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.ActorImpl <em>Actor</em>}' class.
@@ -168,15 +141,6 @@ public interface WorkflowMMPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTOR_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Actor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTOR_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.TaskImpl <em>Task</em>}' class.
@@ -241,15 +205,6 @@ public interface WorkflowMMPackage extends EPackage {
 	 * @ordered
 	 */
 	int TASK_FEATURE_COUNT = 5;
-
-	/**
-	 * The number of operations of the '<em>Task</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TASK_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.UserTaskImpl <em>User Task</em>}' class.
@@ -323,15 +278,6 @@ public interface WorkflowMMPackage extends EPackage {
 	 * @ordered
 	 */
 	int USER_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>User Task</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int USER_TASK_OPERATION_COUNT = TASK_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.ServiceTaskImpl <em>Service Task</em>}' class.
@@ -416,15 +362,6 @@ public interface WorkflowMMPackage extends EPackage {
 	int SERVICE_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Service Task</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SERVICE_TASK_OPERATION_COUNT = TASK_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.SendMsgTaskImpl <em>Send Msg Task</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -498,22 +435,22 @@ public interface WorkflowMMPackage extends EPackage {
 	int SEND_MSG_TASK__REQUIRES = TASK_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Next Task</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEND_MSG_TASK__NEXT_TASK = TASK_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Send Msg Task</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEND_MSG_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Send Msg Task</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEND_MSG_TASK_OPERATION_COUNT = TASK_OPERATION_COUNT + 0;
+	int SEND_MSG_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.ReceiveMsgTaskImpl <em>Receive Msg Task</em>}' class.
@@ -580,15 +517,6 @@ public interface WorkflowMMPackage extends EPackage {
 	int RECEIVE_MSG_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Receive Msg Task</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECEIVE_MSG_TASK_OPERATION_COUNT = TASK_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.InformationImpl <em>Information</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -653,22 +581,22 @@ public interface WorkflowMMPackage extends EPackage {
 	int INFORMATION__NAME = 5;
 
 	/**
+	 * The feature id for the '<em><b>Multiple</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFORMATION__MULTIPLE = 6;
+
+	/**
 	 * The number of structural features of the '<em>Information</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INFORMATION_FEATURE_COUNT = 6;
-
-	/**
-	 * The number of operations of the '<em>Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INFORMATION_OPERATION_COUNT = 0;
+	int INFORMATION_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.OptionImpl <em>Option</em>}' class.
@@ -699,22 +627,22 @@ public interface WorkflowMMPackage extends EPackage {
 	int OPTION__TITLE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTION__SELECTED = 2;
+
+	/**
 	 * The number of structural features of the '<em>Option</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPTION_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Option</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTION_OPERATION_COUNT = 0;
+	int OPTION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.FileImpl <em>File</em>}' class.
@@ -745,22 +673,22 @@ public interface WorkflowMMPackage extends EPackage {
 	int FILE__PATH = 1;
 
 	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE__TITLE = 2;
+
+	/**
 	 * The number of structural features of the '<em>File</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>File</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_OPERATION_COUNT = 0;
+	int FILE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.BeginImpl <em>Begin</em>}' class.
@@ -827,15 +755,6 @@ public interface WorkflowMMPackage extends EPackage {
 	int BEGIN_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Begin</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BEGIN_OPERATION_COUNT = TASK_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.EndImpl <em>End</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -898,15 +817,6 @@ public interface WorkflowMMPackage extends EPackage {
 	 * @ordered
 	 */
 	int END_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>End</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int END_OPERATION_COUNT = TASK_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.ST_PrintDocumentImpl <em>ST Print Document</em>}' class.
@@ -991,15 +901,6 @@ public interface WorkflowMMPackage extends EPackage {
 	int ST_PRINT_DOCUMENT_FEATURE_COUNT = SERVICE_TASK_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>ST Print Document</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ST_PRINT_DOCUMENT_OPERATION_COUNT = SERVICE_TASK_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.ST_SignDocumentImpl <em>ST Sign Document</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1080,15 +981,6 @@ public interface WorkflowMMPackage extends EPackage {
 	 * @ordered
 	 */
 	int ST_SIGN_DOCUMENT_FEATURE_COUNT = SERVICE_TASK_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>ST Sign Document</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ST_SIGN_DOCUMENT_OPERATION_COUNT = SERVICE_TASK_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.ST_ValidateDataImpl <em>ST Validate Data</em>}' class.
@@ -1173,15 +1065,6 @@ public interface WorkflowMMPackage extends EPackage {
 	int ST_VALIDATE_DATA_FEATURE_COUNT = SERVICE_TASK_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>ST Validate Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ST_VALIDATE_DATA_OPERATION_COUNT = SERVICE_TASK_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.ST_MakeCalculationImpl <em>ST Make Calculation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1264,15 +1147,6 @@ public interface WorkflowMMPackage extends EPackage {
 	int ST_MAKE_CALCULATION_FEATURE_COUNT = SERVICE_TASK_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>ST Make Calculation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ST_MAKE_CALCULATION_OPERATION_COUNT = SERVICE_TASK_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.DataImpl <em>Data</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1301,22 +1175,22 @@ public interface WorkflowMMPackage extends EPackage {
 	int DATA__TEXT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA__NAME = 2;
+
+	/**
 	 * The number of structural features of the '<em>Data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Data</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_OPERATION_COUNT = 0;
+	int DATA_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link WorkflowMM.TypeOfData <em>Type Of Data</em>}' enum.
@@ -1340,17 +1214,6 @@ public interface WorkflowMMPackage extends EPackage {
 	EClass getWorkflow();
 
 	/**
-	 * Returns the meta object for the attribute '{@link WorkflowMM.Workflow#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see WorkflowMM.Workflow#getId()
-	 * @see #getWorkflow()
-	 * @generated
-	 */
-	EAttribute getWorkflow_Id();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link WorkflowMM.Workflow#getActors <em>Actors</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1360,17 +1223,6 @@ public interface WorkflowMMPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getWorkflow_Actors();
-
-	/**
-	 * Returns the meta object for the attribute '{@link WorkflowMM.Workflow#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see WorkflowMM.Workflow#getName()
-	 * @see #getWorkflow()
-	 * @generated
-	 */
-	EAttribute getWorkflow_Name();
 
 	/**
 	 * Returns the meta object for class '{@link WorkflowMM.Actor <em>Actor</em>}'.
@@ -1577,6 +1429,17 @@ public interface WorkflowMMPackage extends EPackage {
 	EReference getSendMsgTask_Requires();
 
 	/**
+	 * Returns the meta object for the reference '{@link WorkflowMM.SendMsgTask#getNextTask <em>Next Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Next Task</em>'.
+	 * @see WorkflowMM.SendMsgTask#getNextTask()
+	 * @see #getSendMsgTask()
+	 * @generated
+	 */
+	EReference getSendMsgTask_NextTask();
+
+	/**
 	 * Returns the meta object for class '{@link WorkflowMM.ReceiveMsgTask <em>Receive Msg Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1663,6 +1526,17 @@ public interface WorkflowMMPackage extends EPackage {
 	EAttribute getInformation_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link WorkflowMM.Information#isMultiple <em>Multiple</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Multiple</em>'.
+	 * @see WorkflowMM.Information#isMultiple()
+	 * @see #getInformation()
+	 * @generated
+	 */
+	EAttribute getInformation_Multiple();
+
+	/**
 	 * Returns the meta object for class '{@link WorkflowMM.Option <em>Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1695,6 +1569,17 @@ public interface WorkflowMMPackage extends EPackage {
 	EAttribute getOption_Title();
 
 	/**
+	 * Returns the meta object for the attribute '{@link WorkflowMM.Option#isSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see WorkflowMM.Option#isSelected()
+	 * @see #getOption()
+	 * @generated
+	 */
+	EAttribute getOption_Selected();
+
+	/**
 	 * Returns the meta object for class '{@link WorkflowMM.File <em>File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1725,6 +1610,17 @@ public interface WorkflowMMPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFile_Path();
+
+	/**
+	 * Returns the meta object for the attribute '{@link WorkflowMM.File#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see WorkflowMM.File#getTitle()
+	 * @see #getFile()
+	 * @generated
+	 */
+	EAttribute getFile_Title();
 
 	/**
 	 * Returns the meta object for class '{@link WorkflowMM.Begin <em>Begin</em>}'.
@@ -1819,6 +1715,17 @@ public interface WorkflowMMPackage extends EPackage {
 	EAttribute getData_Text();
 
 	/**
+	 * Returns the meta object for the attribute '{@link WorkflowMM.Data#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see WorkflowMM.Data#getName()
+	 * @see #getData()
+	 * @generated
+	 */
+	EAttribute getData_Name();
+
+	/**
 	 * Returns the meta object for enum '{@link WorkflowMM.TypeOfData <em>Type Of Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1862,28 +1769,12 @@ public interface WorkflowMMPackage extends EPackage {
 		EClass WORKFLOW = eINSTANCE.getWorkflow();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WORKFLOW__ID = eINSTANCE.getWorkflow_Id();
-
-		/**
 		 * The meta object literal for the '<em><b>Actors</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference WORKFLOW__ACTORS = eINSTANCE.getWorkflow_Actors();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WORKFLOW__NAME = eINSTANCE.getWorkflow_Name();
 
 		/**
 		 * The meta object literal for the '{@link WorkflowMM.impl.ActorImpl <em>Actor</em>}' class.
@@ -2048,6 +1939,14 @@ public interface WorkflowMMPackage extends EPackage {
 		EReference SEND_MSG_TASK__REQUIRES = eINSTANCE.getSendMsgTask_Requires();
 
 		/**
+		 * The meta object literal for the '<em><b>Next Task</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEND_MSG_TASK__NEXT_TASK = eINSTANCE.getSendMsgTask_NextTask();
+
+		/**
 		 * The meta object literal for the '{@link WorkflowMM.impl.ReceiveMsgTaskImpl <em>Receive Msg Task</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2116,6 +2015,14 @@ public interface WorkflowMMPackage extends EPackage {
 		EAttribute INFORMATION__NAME = eINSTANCE.getInformation_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Multiple</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INFORMATION__MULTIPLE = eINSTANCE.getInformation_Multiple();
+
+		/**
 		 * The meta object literal for the '{@link WorkflowMM.impl.OptionImpl <em>Option</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2142,6 +2049,14 @@ public interface WorkflowMMPackage extends EPackage {
 		EAttribute OPTION__TITLE = eINSTANCE.getOption_Title();
 
 		/**
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTION__SELECTED = eINSTANCE.getOption_Selected();
+
+		/**
 		 * The meta object literal for the '{@link WorkflowMM.impl.FileImpl <em>File</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2166,6 +2081,14 @@ public interface WorkflowMMPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FILE__PATH = eINSTANCE.getFile_Path();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FILE__TITLE = eINSTANCE.getFile_Title();
 
 		/**
 		 * The meta object literal for the '{@link WorkflowMM.impl.BeginImpl <em>Begin</em>}' class.
@@ -2252,6 +2175,14 @@ public interface WorkflowMMPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA__TEXT = eINSTANCE.getData_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA__NAME = eINSTANCE.getData_Name();
 
 		/**
 		 * The meta object literal for the '{@link WorkflowMM.TypeOfData <em>Type Of Data</em>}' enum.

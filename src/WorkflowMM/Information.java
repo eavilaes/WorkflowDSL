@@ -21,10 +21,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link WorkflowMM.Information#getType <em>Type</em>}</li>
  *   <li>{@link WorkflowMM.Information#getDatas <em>Datas</em>}</li>
  *   <li>{@link WorkflowMM.Information#getName <em>Name</em>}</li>
+ *   <li>{@link WorkflowMM.Information#isMultiple <em>Multiple</em>}</li>
  * </ul>
  *
  * @see WorkflowMM.WorkflowMMPackage#getInformation()
- * @model
+ * @model annotation="gmf.node label='name' label.icon='false' color='150,200,255'"
  * @generated
  */
 public interface Information extends EObject {
@@ -40,6 +41,7 @@ public interface Information extends EObject {
 	 * @see #setId(String)
 	 * @see WorkflowMM.WorkflowMMPackage#getInformation_Id()
 	 * @model required="true"
+	 *        annotation="gmf.label label.pattern='id: {0}'"
 	 * @generated
 	 */
 	String getId();
@@ -66,6 +68,7 @@ public interface Information extends EObject {
 	 * @return the value of the '<em>Options</em>' containment reference list.
 	 * @see WorkflowMM.WorkflowMMPackage#getInformation_Options()
 	 * @model containment="true"
+	 *        annotation="gmf.compartment layout='list'"
 	 * @generated
 	 */
 	EList<Option> getOptions();
@@ -82,6 +85,7 @@ public interface Information extends EObject {
 	 * @return the value of the '<em>Files</em>' containment reference list.
 	 * @see WorkflowMM.WorkflowMMPackage#getInformation_Files()
 	 * @model containment="true"
+	 *        annotation="gmf.compartment layout='list'"
 	 * @generated
 	 */
 	EList<File> getFiles();
@@ -127,6 +131,7 @@ public interface Information extends EObject {
 	 * @return the value of the '<em>Datas</em>' containment reference list.
 	 * @see WorkflowMM.WorkflowMMPackage#getInformation_Datas()
 	 * @model containment="true"
+	 *        annotation="gmf.compartment layout='list'"
 	 * @generated
 	 */
 	EList<Data> getDatas();
@@ -156,5 +161,31 @@ public interface Information extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Multiple</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Multiple</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Multiple</em>' attribute.
+	 * @see #setMultiple(boolean)
+	 * @see WorkflowMM.WorkflowMMPackage#getInformation_Multiple()
+	 * @model annotation="gmf.label label.pattern='multiple: {0}'"
+	 * @generated
+	 */
+	boolean isMultiple();
+
+	/**
+	 * Sets the value of the '{@link WorkflowMM.Information#isMultiple <em>Multiple</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Multiple</em>' attribute.
+	 * @see #isMultiple()
+	 * @generated
+	 */
+	void setMultiple(boolean value);
 
 } // Information

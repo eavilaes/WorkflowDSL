@@ -10,7 +10,7 @@ package WorkflowMM;
  *
  *
  * @see WorkflowMM.WorkflowMMPackage#getEnd()
- * @model
+ * @model annotation="gmf.node label='name' label.icon='false' color='250,50,50'"
  * @generated
  */
 public interface End extends Task {

@@ -5,6 +5,7 @@ package WorkflowMM.impl;
 import WorkflowMM.Information;
 import WorkflowMM.ReceiveMsgTask;
 import WorkflowMM.SendMsgTask;
+import WorkflowMM.Task;
 import WorkflowMM.WorkflowMMPackage;
 
 import java.util.Collection;
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link WorkflowMM.impl.SendMsgTaskImpl#getDestination <em>Destination</em>}</li>
  *   <li>{@link WorkflowMM.impl.SendMsgTaskImpl#getRequires <em>Requires</em>}</li>
+ *   <li>{@link WorkflowMM.impl.SendMsgTaskImpl#getNextTask <em>Next Task</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,6 +56,16 @@ public class SendMsgTaskImpl extends TaskImpl implements SendMsgTask {
 	 * @ordered
 	 */
 	protected EList<Information> requires;
+
+	/**
+	 * The cached value of the '{@link #getNextTask() <em>Next Task</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNextTask()
+	 * @generated
+	 * @ordered
+	 */
+	protected Task nextTask;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,6 +141,44 @@ public class SendMsgTaskImpl extends TaskImpl implements SendMsgTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Task getNextTask() {
+		if (nextTask != null && nextTask.eIsProxy()) {
+			InternalEObject oldNextTask = (InternalEObject)nextTask;
+			nextTask = (Task)eResolveProxy(oldNextTask);
+			if (nextTask != oldNextTask) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WorkflowMMPackage.SEND_MSG_TASK__NEXT_TASK, oldNextTask, nextTask));
+			}
+		}
+		return nextTask;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Task basicGetNextTask() {
+		return nextTask;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNextTask(Task newNextTask) {
+		Task oldNextTask = nextTask;
+		nextTask = newNextTask;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkflowMMPackage.SEND_MSG_TASK__NEXT_TASK, oldNextTask, nextTask));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -137,6 +187,9 @@ public class SendMsgTaskImpl extends TaskImpl implements SendMsgTask {
 				return basicGetDestination();
 			case WorkflowMMPackage.SEND_MSG_TASK__REQUIRES:
 				return getRequires();
+			case WorkflowMMPackage.SEND_MSG_TASK__NEXT_TASK:
+				if (resolve) return getNextTask();
+				return basicGetNextTask();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +210,9 @@ public class SendMsgTaskImpl extends TaskImpl implements SendMsgTask {
 				getRequires().clear();
 				getRequires().addAll((Collection<? extends Information>)newValue);
 				return;
+			case WorkflowMMPackage.SEND_MSG_TASK__NEXT_TASK:
+				setNextTask((Task)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -175,6 +231,9 @@ public class SendMsgTaskImpl extends TaskImpl implements SendMsgTask {
 			case WorkflowMMPackage.SEND_MSG_TASK__REQUIRES:
 				getRequires().clear();
 				return;
+			case WorkflowMMPackage.SEND_MSG_TASK__NEXT_TASK:
+				setNextTask((Task)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -191,6 +250,8 @@ public class SendMsgTaskImpl extends TaskImpl implements SendMsgTask {
 				return destination != null;
 			case WorkflowMMPackage.SEND_MSG_TASK__REQUIRES:
 				return requires != null && !requires.isEmpty();
+			case WorkflowMMPackage.SEND_MSG_TASK__NEXT_TASK:
+				return nextTask != null;
 		}
 		return super.eIsSet(featureID);
 	}

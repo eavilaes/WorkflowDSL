@@ -10,8 +10,7 @@
       <!-- @generated WorkflowMM -->
       <package
             uri="http://www.dmss.es/WorkflowMM"
-            class="WorkflowMM.WorkflowMMPackage"
-            genModel="metamodel/WorkflowMM.genmodel"/>
+            class="WorkflowMM.WorkflowMMPackage"/>
    </extension>
 
 </plugin>

@@ -15,9 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link WorkflowMM.Workflow#getId <em>Id</em>}</li>
  *   <li>{@link WorkflowMM.Workflow#getActors <em>Actors</em>}</li>
- *   <li>{@link WorkflowMM.Workflow#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see WorkflowMM.WorkflowMMPackage#getWorkflow()
@@ -26,32 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Workflow extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see WorkflowMM.WorkflowMMPackage#getWorkflow_Id()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getId();
-
-	/**
-	 * Sets the value of the '{@link WorkflowMM.Workflow#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Actors</b></em>' containment reference list.
 	 * The list contents are of type {@link WorkflowMM.Actor}.
@@ -67,31 +39,5 @@ public interface Workflow extends EObject {
 	 * @generated
 	 */
 	EList<Actor> getActors();
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see WorkflowMM.WorkflowMMPackage#getWorkflow_Name()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link WorkflowMM.Workflow#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
 
 } // Workflow

@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -22,11 +23,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link WorkflowMM.impl.FileImpl#getId <em>Id</em>}</li>
  *   <li>{@link WorkflowMM.impl.FileImpl#getPath <em>Path</em>}</li>
+ *   <li>{@link WorkflowMM.impl.FileImpl#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FileImpl extends MinimalEObjectImpl.Container implements File {
+public class FileImpl extends EObjectImpl implements File {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,6 +68,26 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File {
 	 * @ordered
 	 */
 	protected String path = PATH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String title = TITLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +155,27 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitle(String newTitle) {
+		String oldTitle = title;
+		title = newTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkflowMMPackage.FILE__TITLE, oldTitle, title));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +183,8 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File {
 				return getId();
 			case WorkflowMMPackage.FILE__PATH:
 				return getPath();
+			case WorkflowMMPackage.FILE__TITLE:
+				return getTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +202,9 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File {
 				return;
 			case WorkflowMMPackage.FILE__PATH:
 				setPath((String)newValue);
+				return;
+			case WorkflowMMPackage.FILE__TITLE:
+				setTitle((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +224,9 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File {
 			case WorkflowMMPackage.FILE__PATH:
 				setPath(PATH_EDEFAULT);
 				return;
+			case WorkflowMMPackage.FILE__TITLE:
+				setTitle(TITLE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +243,8 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File {
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case WorkflowMMPackage.FILE__PATH:
 				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
+			case WorkflowMMPackage.FILE__TITLE:
+				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,6 +263,8 @@ public class FileImpl extends MinimalEObjectImpl.Container implements File {
 		result.append(id);
 		result.append(", path: ");
 		result.append(path);
+		result.append(", title: ");
+		result.append(title);
 		result.append(')');
 		return result.toString();
 	}

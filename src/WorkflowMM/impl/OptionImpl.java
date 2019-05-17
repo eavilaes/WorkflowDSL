@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -22,11 +23,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link WorkflowMM.impl.OptionImpl#getId <em>Id</em>}</li>
  *   <li>{@link WorkflowMM.impl.OptionImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link WorkflowMM.impl.OptionImpl#isSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class OptionImpl extends MinimalEObjectImpl.Container implements Option {
+public class OptionImpl extends EObjectImpl implements Option {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,6 +68,26 @@ public class OptionImpl extends MinimalEObjectImpl.Container implements Option {
 	 * @ordered
 	 */
 	protected String title = TITLE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SELECTED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean selected = SELECTED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +155,27 @@ public class OptionImpl extends MinimalEObjectImpl.Container implements Option {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isSelected() {
+		return selected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelected(boolean newSelected) {
+		boolean oldSelected = selected;
+		selected = newSelected;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WorkflowMMPackage.OPTION__SELECTED, oldSelected, selected));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +183,8 @@ public class OptionImpl extends MinimalEObjectImpl.Container implements Option {
 				return getId();
 			case WorkflowMMPackage.OPTION__TITLE:
 				return getTitle();
+			case WorkflowMMPackage.OPTION__SELECTED:
+				return isSelected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +202,9 @@ public class OptionImpl extends MinimalEObjectImpl.Container implements Option {
 				return;
 			case WorkflowMMPackage.OPTION__TITLE:
 				setTitle((String)newValue);
+				return;
+			case WorkflowMMPackage.OPTION__SELECTED:
+				setSelected((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +224,9 @@ public class OptionImpl extends MinimalEObjectImpl.Container implements Option {
 			case WorkflowMMPackage.OPTION__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
+			case WorkflowMMPackage.OPTION__SELECTED:
+				setSelected(SELECTED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +243,8 @@ public class OptionImpl extends MinimalEObjectImpl.Container implements Option {
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case WorkflowMMPackage.OPTION__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+			case WorkflowMMPackage.OPTION__SELECTED:
+				return selected != SELECTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,6 +263,8 @@ public class OptionImpl extends MinimalEObjectImpl.Container implements Option {
 		result.append(id);
 		result.append(", title: ");
 		result.append(title);
+		result.append(", selected: ");
+		result.append(selected);
 		result.append(')');
 		return result.toString();
 	}

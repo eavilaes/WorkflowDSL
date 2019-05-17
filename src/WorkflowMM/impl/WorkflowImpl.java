@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -30,34 +31,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link WorkflowMM.impl.WorkflowImpl#getId <em>Id</em>}</li>
  *   <li>{@link WorkflowMM.impl.WorkflowImpl#getActors <em>Actors</em>}</li>
- *   <li>{@link WorkflowMM.impl.WorkflowImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class WorkflowImpl extends MinimalEObjectImpl.Container implements Workflow {
-	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
-
+public class WorkflowImpl extends EObjectImpl implements Workflow {
 	/**
 	 * The cached value of the '{@link #getActors() <em>Actors</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -67,26 +46,6 @@ public class WorkflowImpl extends MinimalEObjectImpl.Container implements Workfl
 	 * @ordered
 	 */
 	protected EList<Actor> actors;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,53 +71,11 @@ public class WorkflowImpl extends MinimalEObjectImpl.Container implements Workfl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkflowMMPackage.WORKFLOW__ID, oldId, id));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Actor> getActors() {
 		if (actors == null) {
 			actors = new EObjectContainmentEList<Actor>(Actor.class, this, WorkflowMMPackage.WORKFLOW__ACTORS);
 		}
 		return actors;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkflowMMPackage.WORKFLOW__NAME, oldName, name));
 	}
 
 	/**
@@ -183,12 +100,8 @@ public class WorkflowImpl extends MinimalEObjectImpl.Container implements Workfl
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WorkflowMMPackage.WORKFLOW__ID:
-				return getId();
 			case WorkflowMMPackage.WORKFLOW__ACTORS:
 				return getActors();
-			case WorkflowMMPackage.WORKFLOW__NAME:
-				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,15 +115,9 @@ public class WorkflowImpl extends MinimalEObjectImpl.Container implements Workfl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WorkflowMMPackage.WORKFLOW__ID:
-				setId((String)newValue);
-				return;
 			case WorkflowMMPackage.WORKFLOW__ACTORS:
 				getActors().clear();
 				getActors().addAll((Collection<? extends Actor>)newValue);
-				return;
-			case WorkflowMMPackage.WORKFLOW__NAME:
-				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,14 +131,8 @@ public class WorkflowImpl extends MinimalEObjectImpl.Container implements Workfl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WorkflowMMPackage.WORKFLOW__ID:
-				setId(ID_EDEFAULT);
-				return;
 			case WorkflowMMPackage.WORKFLOW__ACTORS:
 				getActors().clear();
-				return;
-			case WorkflowMMPackage.WORKFLOW__NAME:
-				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -245,32 +146,10 @@ public class WorkflowImpl extends MinimalEObjectImpl.Container implements Workfl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WorkflowMMPackage.WORKFLOW__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case WorkflowMMPackage.WORKFLOW__ACTORS:
 				return actors != null && !actors.isEmpty();
-			case WorkflowMMPackage.WORKFLOW__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(", name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //WorkflowImpl

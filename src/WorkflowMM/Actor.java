@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see WorkflowMM.WorkflowMMPackage#getActor()
- * @model
+ * @model annotation="gmf.node label='name' label.icon='false' color='200,200,200'"
  * @generated
  */
 public interface Actor extends EObject {
@@ -38,6 +38,7 @@ public interface Actor extends EObject {
 	 * @see #setId(String)
 	 * @see WorkflowMM.WorkflowMMPackage#getActor_Id()
 	 * @model required="true"
+	 *        annotation="gmf.label label.pattern='id: {0}'"
 	 * @generated
 	 */
 	String getId();

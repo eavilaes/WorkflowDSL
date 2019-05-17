@@ -15,10 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link WorkflowMM.File#getId <em>Id</em>}</li>
  *   <li>{@link WorkflowMM.File#getPath <em>Path</em>}</li>
+ *   <li>{@link WorkflowMM.File#getTitle <em>Title</em>}</li>
  * </ul>
  *
  * @see WorkflowMM.WorkflowMMPackage#getFile()
- * @model
+ * @model annotation="gmf.node label='title' label.icon='false' color='100,150,200'"
  * @generated
  */
 public interface File extends EObject {
@@ -34,6 +35,7 @@ public interface File extends EObject {
 	 * @see #setId(String)
 	 * @see WorkflowMM.WorkflowMMPackage#getFile_Id()
 	 * @model required="true"
+	 *        annotation="gmf.label label.pattern='id: {0}'"
 	 * @generated
 	 */
 	String getId();
@@ -60,6 +62,7 @@ public interface File extends EObject {
 	 * @see #setPath(String)
 	 * @see WorkflowMM.WorkflowMMPackage#getFile_Path()
 	 * @model required="true"
+	 *        annotation="gmf.label label.pattern='path: {0}'"
 	 * @generated
 	 */
 	String getPath();
@@ -73,5 +76,31 @@ public interface File extends EObject {
 	 * @generated
 	 */
 	void setPath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Title</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Title</em>' attribute.
+	 * @see #setTitle(String)
+	 * @see WorkflowMM.WorkflowMMPackage#getFile_Title()
+	 * @model
+	 * @generated
+	 */
+	String getTitle();
+
+	/**
+	 * Sets the value of the '{@link WorkflowMM.File#getTitle <em>Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Title</em>' attribute.
+	 * @see #getTitle()
+	 * @generated
+	 */
+	void setTitle(String value);
 
 } // File

@@ -1,0 +1,167 @@
+@gmf
+@"http://www.eclipse.org/OCL/Import"(ecore="http://www.eclipse.org/emf/2002/Ecore")
+@Ecore(invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot")
+@namespace(uri="http://www.dmss.es/WorkflowMM", prefix="WorkflowMM")
+package WorkflowMM;
+
+@Ecore(constraints="OnlyOneBeginTag OnlyOneEndTag TaskIdMustBeUnique DataIdMustBeUnique OptionIdMustBeUnique FileIdMustBeUnique")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(OnlyOneBeginTag="
+			self.actors.tasks->select(T:Task| T.oclIsTypeOf(Begin))->size()=1", OnlyOneEndTag="
+			self.actors.tasks->select(T:Task| T.oclIsTypeOf(End))->size()=1", TaskIdMustBeUnique="
+			self.actors.tasks->forAll(t1, t2 : Task | t1<>t2 implies t1.id<>t2.id)", DataIdMustBeUnique="
+			self.actors.informations.datas->forAll(d1, d2 : Data | d1<>d2 implies d1.id<>d2.id)", OptionIdMustBeUnique="
+			self.actors.informations.options->forAll(o1, o2 : Option | o1<>o2 implies o1.id<>o2.id)", FileIdMustBeUnique="
+			self.actors.informations.files->forAll(f1, f2 : File | f1<>f2 implies f1.id<>f2.id)")
+@gmf.diagram
+class Workflow {
+  val Actor[+] actors;
+}
+
+@gmf.node(label="name", label.icon="false", color="200,200,200")
+class Actor {
+  @gmf.label(label.pattern="id: {0}")
+  attr String[1] ~id;
+  attr String[1] name;
+
+  @gmf.compartment
+  val Task[+] tasks;
+
+  @gmf.compartment
+  val Information[*] informations;
+}
+
+@Ecore(constraints="TaskMustBeLinkedToTheSameActor")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(TaskMustBeLinkedToTheSameActor="
+			not self.oclIsTypeOf(SendMsgTask) and not self.oclIsTypeOf(ReceiveMsgTask) and not self.oclIsTypeOf(End) implies self.oclContainer = self.linkedTo.oclContainer")
+@gmf.node(label="name", label.icon="false", color="255,255,255")
+abstract class Task {
+  @gmf.label(label.pattern="id: {0}")
+  attr String[1] ~id;
+  attr String[1] name;
+
+  @gmf.label(label.pattern="desc: {0}")
+  attr String[1] description;
+
+  @gmf.link(target.decoration="arrow", color="0,0,0")
+  ref Task#linkedFrom linkedTo;
+
+  @gmf.link(target.decoration="arrow", color="255,255,255")
+  ref Task#linkedTo linkedFrom;
+}
+
+@Ecore(constraints="TaskMustBeLinkedFromATask TaskMustBeLinkedToATask")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(TaskMustBeLinkedFromATask="
+			self.linkedFrom->size()=1", TaskMustBeLinkedToATask="
+			self.linkedTo->size()=1")
+class UserTask extends Task {
+
+  @gmf.link(label="req", target.decoration="arrow", color="255,0,0")
+  ref Information[+] requires;
+}
+
+@Ecore(constraints="TaskMustBeLinkedFromATask TaskMustBeLinkedToATask")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(TaskMustBeLinkedFromATask="
+			self.linkedFrom->size()=1", TaskMustBeLinkedToATask="
+			self.linkedTo->size()=1")
+class ServiceTask extends Task {
+
+  @gmf.link(label="req", target.decoration="arrow", color="255,0,0")
+  ref Information[+] requires;
+
+  @gmf.link(label="prod", target.decoration="arrow", color="0,255,0")
+  ref Information[+] produces;
+}
+
+@Ecore(constraints="SendMsgTaskAndReceiveMsgTaskMustBelongToDifferentUsers")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(SendMsgTaskAndReceiveMsgTaskMustBelongToDifferentUsers="
+			self.oclContainer<>self.destination.oclContainer")
+class SendMsgTask extends Task {
+
+  @gmf.link(label="destination", target.decoration="arrow", color="255,255,55")
+  ref ReceiveMsgTask[1] destination;
+
+  @gmf.link(label="req", target.decoration="arrow", color="255,0,0")
+  ref Information[*] requires;
+
+  @gmf.link(label="next task", target.decoration="arrow", color="0,0,0", style="dash")
+  ref Task[1] nextTask;
+}
+
+class ReceiveMsgTask extends Task {
+}
+
+@gmf.node(label="name", label.icon="false", color="150,200,255")
+class Information {
+  @gmf.label(label.pattern="id: {0}")
+  attr String[1] ~id;
+
+  @gmf.compartment(layout="list")
+  val Option[*] options;
+
+  @gmf.compartment(layout="list")
+  val File[*] files;
+
+  @gmf.label
+  attr TypeOfData[1] type;
+
+  @gmf.compartment(layout="list")
+  val Data[*] datas;
+  attr String[1] name;
+
+  @gmf.label(label.pattern="multiple: {0}")
+  attr boolean multiple;
+}
+
+@gmf.node(label="title", label.icon="false", color="100,150,200")
+class Option {
+  @gmf.label(label.pattern="id: {0}")
+  attr String[1] ~id;
+  attr String[1] title;
+  attr boolean selected;
+}
+
+@gmf.node(label="title", label.icon="false", color="100,150,200")
+class File {
+  @gmf.label(label.pattern="id: {0}")
+  attr String[1] ~id;
+  @gmf.label(label.pattern="path: {0}")
+  attr String[1] path;
+  attr String title;
+}
+
+enum TypeOfData {
+  FILL_FORM = 0;
+  SELECT_OPTIONS = 1;
+  UPLOAD_FILES = 2;
+  TEXT = 3;
+  FILE = 4;
+}
+
+@gmf.node(label="name", label.icon="false", color="50,250,50")
+class Begin extends Task {
+}
+
+@gmf.node(label="name", label.icon="false", color="250,50,50")
+class End extends Task {
+}
+
+class ST_PrintDocument extends ServiceTask {
+}
+
+class ST_SignDocument extends ServiceTask {
+}
+
+class ST_ValidateData extends ServiceTask {
+}
+
+class ST_MakeCalculation extends ServiceTask {
+}
+
+@gmf.node(label="name", label.icon="false", color="100,150,200")
+class Data {
+  @gmf.label(label.pattern="id: {0}")
+  attr String[1] ~id;
+  attr String text;
+  attr String name;
+}
+

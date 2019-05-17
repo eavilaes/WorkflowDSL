@@ -251,26 +251,8 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWorkflow_Id() {
-		return (EAttribute)workflowEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getWorkflow_Actors() {
-		return (EReference)workflowEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWorkflow_Name() {
-		return (EAttribute)workflowEClass.getEStructuralFeatures().get(2);
+		return (EReference)workflowEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -449,6 +431,15 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSendMsgTask_NextTask() {
+		return (EReference)sendMsgTaskEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReceiveMsgTask() {
 		return receiveMsgTaskEClass;
 	}
@@ -521,6 +512,15 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getInformation_Multiple() {
+		return (EAttribute)informationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOption() {
 		return optionEClass;
 	}
@@ -548,6 +548,15 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getOption_Selected() {
+		return (EAttribute)optionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFile() {
 		return fileEClass;
 	}
@@ -568,6 +577,15 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 	 */
 	public EAttribute getFile_Path() {
 		return (EAttribute)fileEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFile_Title() {
+		return (EAttribute)fileEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -656,6 +674,15 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getData_Name() {
+		return (EAttribute)dataEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getTypeOfData() {
 		return typeOfDataEEnum;
 	}
@@ -689,9 +716,7 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 
 		// Create classes and their features
 		workflowEClass = createEClass(WORKFLOW);
-		createEAttribute(workflowEClass, WORKFLOW__ID);
 		createEReference(workflowEClass, WORKFLOW__ACTORS);
-		createEAttribute(workflowEClass, WORKFLOW__NAME);
 
 		actorEClass = createEClass(ACTOR);
 		createEAttribute(actorEClass, ACTOR__ID);
@@ -716,6 +741,7 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 		sendMsgTaskEClass = createEClass(SEND_MSG_TASK);
 		createEReference(sendMsgTaskEClass, SEND_MSG_TASK__DESTINATION);
 		createEReference(sendMsgTaskEClass, SEND_MSG_TASK__REQUIRES);
+		createEReference(sendMsgTaskEClass, SEND_MSG_TASK__NEXT_TASK);
 
 		receiveMsgTaskEClass = createEClass(RECEIVE_MSG_TASK);
 
@@ -726,14 +752,17 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 		createEAttribute(informationEClass, INFORMATION__TYPE);
 		createEReference(informationEClass, INFORMATION__DATAS);
 		createEAttribute(informationEClass, INFORMATION__NAME);
+		createEAttribute(informationEClass, INFORMATION__MULTIPLE);
 
 		optionEClass = createEClass(OPTION);
 		createEAttribute(optionEClass, OPTION__ID);
 		createEAttribute(optionEClass, OPTION__TITLE);
+		createEAttribute(optionEClass, OPTION__SELECTED);
 
 		fileEClass = createEClass(FILE);
 		createEAttribute(fileEClass, FILE__ID);
 		createEAttribute(fileEClass, FILE__PATH);
+		createEAttribute(fileEClass, FILE__TITLE);
 
 		beginEClass = createEClass(BEGIN);
 
@@ -750,6 +779,7 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 		dataEClass = createEClass(DATA);
 		createEAttribute(dataEClass, DATA__ID);
 		createEAttribute(dataEClass, DATA__TEXT);
+		createEAttribute(dataEClass, DATA__NAME);
 
 		// Create enums
 		typeOfDataEEnum = createEEnum(TYPE_OF_DATA);
@@ -794,11 +824,9 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 		sT_ValidateDataEClass.getESuperTypes().add(this.getServiceTask());
 		sT_MakeCalculationEClass.getESuperTypes().add(this.getServiceTask());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(workflowEClass, Workflow.class, "Workflow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWorkflow_Id(), ecorePackage.getEString(), "id", null, 1, 1, Workflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWorkflow_Actors(), this.getActor(), null, "actors", null, 1, -1, Workflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getWorkflow_Name(), ecorePackage.getEString(), "name", null, 1, 1, Workflow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActor_Id(), ecorePackage.getEString(), "id", null, 1, 1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -823,6 +851,7 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 		initEClass(sendMsgTaskEClass, SendMsgTask.class, "SendMsgTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSendMsgTask_Destination(), this.getReceiveMsgTask(), null, "destination", null, 1, 1, SendMsgTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSendMsgTask_Requires(), this.getInformation(), null, "requires", null, 0, -1, SendMsgTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSendMsgTask_NextTask(), this.getTask(), null, "nextTask", null, 1, 1, SendMsgTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(receiveMsgTaskEClass, ReceiveMsgTask.class, "ReceiveMsgTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -833,14 +862,17 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 		initEAttribute(getInformation_Type(), this.getTypeOfData(), "type", null, 1, 1, Information.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInformation_Datas(), this.getData(), null, "datas", null, 0, -1, Information.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getInformation_Name(), ecorePackage.getEString(), "name", null, 1, 1, Information.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInformation_Multiple(), ecorePackage.getEBoolean(), "multiple", null, 0, 1, Information.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(optionEClass, Option.class, "Option", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOption_Id(), ecorePackage.getEString(), "id", null, 1, 1, Option.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOption_Title(), ecorePackage.getEString(), "title", null, 1, 1, Option.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOption_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, Option.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFile_Id(), ecorePackage.getEString(), "id", null, 1, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFile_Path(), ecorePackage.getEString(), "path", null, 1, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFile_Title(), ecorePackage.getEString(), "title", null, 0, 1, File.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(beginEClass, Begin.class, "Begin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -857,6 +889,7 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getData_Id(), ecorePackage.getEString(), "id", null, 1, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getData_Text(), ecorePackage.getEString(), "text", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getData_Name(), ecorePackage.getEString(), "name", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(typeOfDataEEnum, TypeOfData.class, "TypeOfData");
@@ -870,12 +903,24 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 		createResource(eNS_URI);
 
 		// Create annotations
+		// gmf
+		createGmfAnnotations();
 		// http://www.eclipse.org/OCL/Import
 		createImportAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
 		createPivotAnnotations();
+		// gmf.diagram
+		createGmf_1Annotations();
+		// gmf.node
+		createGmf_2Annotations();
+		// gmf.label
+		createGmf_3Annotations();
+		// gmf.compartment
+		createGmf_4Annotations();
+		// gmf.link
+		createGmf_5Annotations();
 	}
 
 	/**
@@ -986,6 +1031,290 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 		   source, 
 		   new String[] {
 			 "SendMsgTaskAndReceiveMsgTaskMustBelongToDifferentUsers", "\n\t\t\tself.oclContainer<>self.destination.oclContainer"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmfAnnotations() {
+		String source = "gmf";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.diagram</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_1Annotations() {
+		String source = "gmf.diagram";	
+		addAnnotation
+		  (workflowEClass, 
+		   source, 
+		   new String[] {
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.node</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_2Annotations() {
+		String source = "gmf.node";	
+		addAnnotation
+		  (actorEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "label.icon", "false",
+			 "color", "200,200,200"
+		   });	
+		addAnnotation
+		  (taskEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "label.icon", "false",
+			 "color", "255,255,255"
+		   });	
+		addAnnotation
+		  (informationEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "label.icon", "false",
+			 "color", "150,200,255"
+		   });	
+		addAnnotation
+		  (optionEClass, 
+		   source, 
+		   new String[] {
+			 "label", "title",
+			 "label.icon", "false",
+			 "color", "100,150,200"
+		   });	
+		addAnnotation
+		  (fileEClass, 
+		   source, 
+		   new String[] {
+			 "label", "title",
+			 "label.icon", "false",
+			 "color", "100,150,200"
+		   });	
+		addAnnotation
+		  (beginEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "label.icon", "false",
+			 "color", "50,250,50"
+		   });	
+		addAnnotation
+		  (endEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "label.icon", "false",
+			 "color", "250,50,50"
+		   });	
+		addAnnotation
+		  (dataEClass, 
+		   source, 
+		   new String[] {
+			 "label", "name",
+			 "label.icon", "false",
+			 "color", "100,150,200"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.label</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_3Annotations() {
+		String source = "gmf.label";	
+		addAnnotation
+		  (getActor_Id(), 
+		   source, 
+		   new String[] {
+			 "label.pattern", "id: {0}"
+		   });	
+		addAnnotation
+		  (getTask_Id(), 
+		   source, 
+		   new String[] {
+			 "label.pattern", "id: {0}"
+		   });	
+		addAnnotation
+		  (getTask_Description(), 
+		   source, 
+		   new String[] {
+			 "label.pattern", "desc: {0}"
+		   });	
+		addAnnotation
+		  (getInformation_Id(), 
+		   source, 
+		   new String[] {
+			 "label.pattern", "id: {0}"
+		   });	
+		addAnnotation
+		  (getInformation_Type(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getInformation_Multiple(), 
+		   source, 
+		   new String[] {
+			 "label.pattern", "multiple: {0}"
+		   });	
+		addAnnotation
+		  (getOption_Id(), 
+		   source, 
+		   new String[] {
+			 "label.pattern", "id: {0}"
+		   });	
+		addAnnotation
+		  (getFile_Id(), 
+		   source, 
+		   new String[] {
+			 "label.pattern", "id: {0}"
+		   });	
+		addAnnotation
+		  (getFile_Path(), 
+		   source, 
+		   new String[] {
+			 "label.pattern", "path: {0}"
+		   });	
+		addAnnotation
+		  (getData_Id(), 
+		   source, 
+		   new String[] {
+			 "label.pattern", "id: {0}"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.compartment</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_4Annotations() {
+		String source = "gmf.compartment";	
+		addAnnotation
+		  (getActor_Tasks(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getActor_Informations(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getInformation_Options(), 
+		   source, 
+		   new String[] {
+			 "layout", "list"
+		   });	
+		addAnnotation
+		  (getInformation_Files(), 
+		   source, 
+		   new String[] {
+			 "layout", "list"
+		   });	
+		addAnnotation
+		  (getInformation_Datas(), 
+		   source, 
+		   new String[] {
+			 "layout", "list"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>gmf.link</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGmf_5Annotations() {
+		String source = "gmf.link";	
+		addAnnotation
+		  (getTask_LinkedTo(), 
+		   source, 
+		   new String[] {
+			 "target.decoration", "arrow",
+			 "color", "0,0,0"
+		   });	
+		addAnnotation
+		  (getTask_LinkedFrom(), 
+		   source, 
+		   new String[] {
+			 "target.decoration", "arrow",
+			 "color", "255,255,255"
+		   });	
+		addAnnotation
+		  (getUserTask_Requires(), 
+		   source, 
+		   new String[] {
+			 "label", "req",
+			 "target.decoration", "arrow",
+			 "color", "255,0,0"
+		   });	
+		addAnnotation
+		  (getServiceTask_Requires(), 
+		   source, 
+		   new String[] {
+			 "label", "req",
+			 "target.decoration", "arrow",
+			 "color", "255,0,0"
+		   });	
+		addAnnotation
+		  (getServiceTask_Produces(), 
+		   source, 
+		   new String[] {
+			 "label", "prod",
+			 "target.decoration", "arrow",
+			 "color", "0,255,0"
+		   });	
+		addAnnotation
+		  (getSendMsgTask_Destination(), 
+		   source, 
+		   new String[] {
+			 "label", "destination",
+			 "target.decoration", "arrow",
+			 "color", "255,255,55"
+		   });	
+		addAnnotation
+		  (getSendMsgTask_Requires(), 
+		   source, 
+		   new String[] {
+			 "label", "req",
+			 "target.decoration", "arrow",
+			 "color", "255,0,0"
+		   });	
+		addAnnotation
+		  (getSendMsgTask_NextTask(), 
+		   source, 
+		   new String[] {
+			 "label", "next task",
+			 "target.decoration", "arrow",
+			 "color", "0,0,0",
+			 "style", "dash"
 		   });
 	}
 

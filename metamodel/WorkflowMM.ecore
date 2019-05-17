@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="WorkflowMM" nsURI="http://www.dmss.es/WorkflowMM" nsPrefix="WorkflowMM">
+  <eAnnotations source="gmf"/>
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
   </eAnnotations>
@@ -21,18 +22,30 @@
       <details key="OptionIdMustBeUnique" value="&#xA;&#x9;&#x9;&#x9;self.actors.informations.options->forAll(o1, o2 : Option | o1&lt;>o2 implies o1.id&lt;>o2.id)"/>
       <details key="FileIdMustBeUnique" value="&#xA;&#x9;&#x9;&#x9;self.actors.informations.files->forAll(f1, f2 : File | f1&lt;>f2 implies f1.id&lt;>f2.id)"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eAnnotations source="gmf.diagram"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actors" lowerBound="1"
         upperBound="-1" eType="#//Actor" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Actor">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="color" value="200,200,200"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="gmf.label">
+        <details key="label.pattern" value="id: {0}"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" lowerBound="1" upperBound="-1"
-        eType="#//Task" containment="true"/>
+        eType="#//Task" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="informations" upperBound="-1"
-        eType="#//Information" containment="true"/>
+        eType="#//Information" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Task" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -41,14 +54,37 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="TaskMustBeLinkedToTheSameActor" value="&#xA;&#x9;&#x9;&#x9;not self.oclIsTypeOf(SendMsgTask) and not self.oclIsTypeOf(ReceiveMsgTask) and not self.oclIsTypeOf(End) implies self.oclContainer = self.linkedTo.oclContainer"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="color" value="255,255,255"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="gmf.label">
+        <details key="label.pattern" value="id: {0}"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="gmf.label">
+        <details key="label.pattern" value="desc: {0}"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedTo" eType="#//Task"
-        eOpposite="#//Task/linkedFrom"/>
+        eOpposite="#//Task/linkedFrom">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="arrow"/>
+        <details key="color" value="0,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="linkedFrom" eType="#//Task"
-        eOpposite="#//Task/linkedTo"/>
+        eOpposite="#//Task/linkedTo">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="arrow"/>
+        <details key="color" value="255,255,255"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UserTask" eSuperTypes="#//Task">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -59,7 +95,13 @@
       <details key="TaskMustBeLinkedToATask" value="&#xA;&#x9;&#x9;&#x9;self.linkedTo->size()=1"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requires" lowerBound="1"
-        upperBound="-1" eType="#//Information"/>
+        upperBound="-1" eType="#//Information">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="req"/>
+        <details key="target.decoration" value="arrow"/>
+        <details key="color" value="255,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceTask" eSuperTypes="#//Task">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -70,9 +112,21 @@
       <details key="TaskMustBeLinkedToATask" value="&#xA;&#x9;&#x9;&#x9;self.linkedTo->size()=1"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requires" lowerBound="1"
-        upperBound="-1" eType="#//Information"/>
+        upperBound="-1" eType="#//Information">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="req"/>
+        <details key="target.decoration" value="arrow"/>
+        <details key="color" value="255,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="produces" lowerBound="1"
-        upperBound="-1" eType="#//Information"/>
+        upperBound="-1" eType="#//Information">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="prod"/>
+        <details key="target.decoration" value="arrow"/>
+        <details key="color" value="0,255,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SendMsgTask" eSuperTypes="#//Task">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -82,33 +136,101 @@
       <details key="SendMsgTaskAndReceiveMsgTaskMustBelongToDifferentUsers" value="&#xA;&#x9;&#x9;&#x9;self.oclContainer&lt;>self.destination.oclContainer"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" lowerBound="1"
-        eType="#//ReceiveMsgTask"/>
+        eType="#//ReceiveMsgTask">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="destination"/>
+        <details key="target.decoration" value="arrow"/>
+        <details key="color" value="255,255,55"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requires" upperBound="-1"
-        eType="#//Information"/>
+        eType="#//Information">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="req"/>
+        <details key="target.decoration" value="arrow"/>
+        <details key="color" value="255,0,0"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nextTask" lowerBound="1"
-        eType="#//Task"/>
+        eType="#//Task">
+      <eAnnotations source="gmf.link">
+        <details key="label" value="next task"/>
+        <details key="target.decoration" value="arrow"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="dash"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReceiveMsgTask" eSuperTypes="#//Task"/>
   <eClassifiers xsi:type="ecore:EClass" name="Information">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="color" value="150,200,255"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="gmf.label">
+        <details key="label.pattern" value="id: {0}"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="options" upperBound="-1"
-        eType="#//Option" containment="true"/>
+        eType="#//Option" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="files" upperBound="-1"
-        eType="#//File" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//TypeOfData"/>
+        eType="#//File" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//TypeOfData">
+      <eAnnotations source="gmf.label"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="datas" upperBound="-1"
-        eType="#//Data" containment="true"/>
+        eType="#//Data" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="gmf.label">
+        <details key="label.pattern" value="multiple: {0}"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Option">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="title"/>
+      <details key="label.icon" value="false"/>
+      <details key="color" value="100,150,200"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="gmf.label">
+        <details key="label.pattern" value="id: {0}"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="File">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="title"/>
+      <details key="label.icon" value="false"/>
+      <details key="color" value="100,150,200"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="gmf.label">
+        <details key="label.pattern" value="id: {0}"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="gmf.label">
+        <details key="label.pattern" value="path: {0}"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TypeOfData">
@@ -118,14 +240,35 @@
     <eLiterals name="TEXT" value="3"/>
     <eLiterals name="FILE" value="4"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Begin" eSuperTypes="#//Task"/>
-  <eClassifiers xsi:type="ecore:EClass" name="End" eSuperTypes="#//Task"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Begin" eSuperTypes="#//Task">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="color" value="50,250,50"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="End" eSuperTypes="#//Task">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="color" value="250,50,50"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ST_PrintDocument" eSuperTypes="#//ServiceTask"/>
   <eClassifiers xsi:type="ecore:EClass" name="ST_SignDocument" eSuperTypes="#//ServiceTask"/>
   <eClassifiers xsi:type="ecore:EClass" name="ST_ValidateData" eSuperTypes="#//ServiceTask"/>
   <eClassifiers xsi:type="ecore:EClass" name="ST_MakeCalculation" eSuperTypes="#//ServiceTask"/>
   <eClassifiers xsi:type="ecore:EClass" name="Data">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eAnnotations source="gmf.node">
+      <details key="label" value="name"/>
+      <details key="label.icon" value="false"/>
+      <details key="color" value="100,150,200"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="gmf.label">
+        <details key="label.pattern" value="id: {0}"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

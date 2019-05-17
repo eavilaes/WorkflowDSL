@@ -34,6 +34,7 @@ public interface UserTask extends Task {
 	 * @return the value of the '<em>Requires</em>' reference list.
 	 * @see WorkflowMM.WorkflowMMPackage#getUserTask_Requires()
 	 * @model required="true"
+	 *        annotation="gmf.link label='req' target.decoration='arrow' color='255,0,0'"
 	 * @generated
 	 */
 	EList<Information> getRequires();

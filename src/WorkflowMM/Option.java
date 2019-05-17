@@ -15,10 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link WorkflowMM.Option#getId <em>Id</em>}</li>
  *   <li>{@link WorkflowMM.Option#getTitle <em>Title</em>}</li>
+ *   <li>{@link WorkflowMM.Option#isSelected <em>Selected</em>}</li>
  * </ul>
  *
  * @see WorkflowMM.WorkflowMMPackage#getOption()
- * @model
+ * @model annotation="gmf.node label='title' label.icon='false' color='100,150,200'"
  * @generated
  */
 public interface Option extends EObject {
@@ -34,6 +35,7 @@ public interface Option extends EObject {
 	 * @see #setId(String)
 	 * @see WorkflowMM.WorkflowMMPackage#getOption_Id()
 	 * @model required="true"
+	 *        annotation="gmf.label label.pattern='id: {0}'"
 	 * @generated
 	 */
 	String getId();
@@ -73,5 +75,31 @@ public interface Option extends EObject {
 	 * @generated
 	 */
 	void setTitle(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selected</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Selected</em>' attribute.
+	 * @see #setSelected(boolean)
+	 * @see WorkflowMM.WorkflowMMPackage#getOption_Selected()
+	 * @model
+	 * @generated
+	 */
+	boolean isSelected();
+
+	/**
+	 * Sets the value of the '{@link WorkflowMM.Option#isSelected <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Selected</em>' attribute.
+	 * @see #isSelected()
+	 * @generated
+	 */
+	void setSelected(boolean value);
 
 } // Option

@@ -35,6 +35,7 @@ public interface ServiceTask extends Task {
 	 * @return the value of the '<em>Requires</em>' reference list.
 	 * @see WorkflowMM.WorkflowMMPackage#getServiceTask_Requires()
 	 * @model required="true"
+	 *        annotation="gmf.link label='req' target.decoration='arrow' color='255,0,0'"
 	 * @generated
 	 */
 	EList<Information> getRequires();
@@ -51,6 +52,7 @@ public interface ServiceTask extends Task {
 	 * @return the value of the '<em>Produces</em>' reference list.
 	 * @see WorkflowMM.WorkflowMMPackage#getServiceTask_Produces()
 	 * @model required="true"
+	 *        annotation="gmf.link label='prod' target.decoration='arrow' color='0,255,0'"
 	 * @generated
 	 */
 	EList<Information> getProduces();
