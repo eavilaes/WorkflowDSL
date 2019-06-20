@@ -4,8 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:WorkflowMM="http://www.dmss.es/WorkflowMM"
-    xsi:schemaLocation="http://www.dmss.es/WorkflowMM ../metamodel/WorkflowMM.ecore"
-    id="0" name="PizzaDelivery">
+    xsi:schemaLocation="http://www.dmss.es/WorkflowMM ../metamodel/WorkflowMM.ecore">
   <actors id="0"
       name="Customer">
     <tasks xsi:type="WorkflowMM:Begin"
@@ -47,14 +46,15 @@
         id="8"
         name="Receive notification"
         description="Receive a notification when the pizza is ready"
-        linkedTo="//@actors.0/@tasks.6"/>
+        linkedTo="//@actors.0/@tasks.6"
+        linkedFrom="//@actors.1/@tasks.2"/>
     <tasks xsi:type="WorkflowMM:UserTask"
         id="9"
         name="Satisfaction questionnaire"
         description="The user fills in a satisfaction questionnaire"
         linkedTo="//@actors.0/@tasks.7"
         linkedFrom="//@actors.0/@tasks.5"
-        requires="//@actors.0/@informations.3"/>
+        requires="//@actors.0/@informations.1"/>
     <tasks xsi:type="WorkflowMM:UserTask"
         id="890"
         name="Upload Documents"
@@ -70,8 +70,7 @@
     <informations
         id="1"
         type="SELECT_OPTIONS"
-        name="type of pizza form"
-        multiple="true">
+        name="type of pizza form">
       <options
           id="0"
           title="Carbonara"/>
@@ -84,14 +83,14 @@
     </informations>
     <informations
         id="2"
-        name="satisfaction form">
+        name="Satisfaction Degree">
       <datas
           id="0"
           text="Satisfaction degree"/>
     </informations>
     <informations
         id="2"
-        name="personal data form">
+        name="Personal Data">
       <datas
           id="1"
           text="Name"
@@ -134,7 +133,7 @@
         description="The restaurant receives a pizza order"
         linkedTo="//@actors.1/@tasks.1"
         linkedFrom="//@actors.0/@tasks.4"/>
-    <tasks xsi:type="WorkflowMM:ST_PrintDocument"
+    <tasks xsi:type="WorkflowMM:ServiceTask"
         id="6"
         name="Print pizza order"
         description="Print the pizza order to be cooked"
@@ -146,8 +145,10 @@
         id="7"
         name="Notify customer"
         description="Notify the customer when his pizza is ready"
+        linkedTo="//@actors.0/@tasks.5"
         linkedFrom="//@actors.1/@tasks.1"
-        destination="//@actors.0/@tasks.5"/>
+        destination="//@actors.0/@tasks.5"
+        nextTask="//@actors.1/@tasks.0"/>
     <informations
         id="3"
         type="UPLOAD_FILES"
