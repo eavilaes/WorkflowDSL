@@ -33,16 +33,3 @@ body{
   border-style: none; 
   color:lightcoral;
 }
-.service-button{
- border-radius: 5px;
- background-color: lightcoral;
- border-style:none;
- color: white;
- margin:1%;
-}
-.msg-line{
- border-radius:5px;
- background-color:white;
- margin:1%;
- padding: 1%;
-}
