@@ -1,12 +1,12 @@
 CREATE TABLE Selectapizza (
-	typeofpizzaform VARCHAR,
 );
 CREATE TABLE Fillpersonalinfo (
-	PersonalData VARCHAR,
+	Name VARCHAR,
+	Address VARCHAR,
+	CreditCard VARCHAR,
 );
 CREATE TABLE Satisfactionquestionnaire (
-	SatisfactionDegree VARCHAR,
+	degree VARCHAR,
 );
 CREATE TABLE UploadDocuments (
-	Documents VARCHAR,
 );

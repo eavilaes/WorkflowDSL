@@ -86,7 +86,8 @@
         name="Satisfaction Degree">
       <datas
           id="0"
-          text="Satisfaction degree"/>
+          text="Satisfaction degree"
+          name="degree"/>
     </informations>
     <informations
         id="2"
