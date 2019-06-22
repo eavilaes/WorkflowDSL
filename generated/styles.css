@@ -28,6 +28,8 @@ body{
   margin-bottom:1%;
 }
 .next-button{
+  display: block;
+  margin: auto;
   border-radius: 5px; 
   background-color: white; 
   border-style: none; 

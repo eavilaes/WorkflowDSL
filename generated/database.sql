@@ -6,7 +6,7 @@ CREATE TABLE Fillpersonalinfo (
 	CreditCard VARCHAR,
 );
 CREATE TABLE Satisfactionquestionnaire (
-	degree VARCHAR,
+	Satisfactiondegree VARCHAR,
 );
 CREATE TABLE UploadDocuments (
 );
