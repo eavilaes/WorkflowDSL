@@ -27,11 +27,16 @@ body{
   margin-top:1%;
   margin-bottom:1%;
 }
-.next-button{
-  display: block;
-  margin: auto;
+.next-button, .action-button, .attend-button{
   border-radius: 5px; 
   background-color: white; 
   border-style: none; 
   color:lightcoral;
+}
+.action-button{
+  display: block;
+}
+.next-button{
+  display: block;
+  margin: auto;
 }
