@@ -49,15 +49,6 @@ public interface WorkflowMMFactory extends EFactory {
 	UserTask createUserTask();
 
 	/**
-	 * Returns a new object of class '<em>Service Task</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service Task</em>'.
-	 * @generated
-	 */
-	ServiceTask createServiceTask();
-
-	/**
 	 * Returns a new object of class '<em>Send Msg Task</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,6 +146,15 @@ public interface WorkflowMMFactory extends EFactory {
 	 * @generated
 	 */
 	ST_MakeCalculation createST_MakeCalculation();
+
+	/**
+	 * Returns a new object of class '<em>ST External Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>ST External Service</em>'.
+	 * @generated
+	 */
+	ST_ExternalService createST_ExternalService();
 
 	/**
 	 * Returns a new object of class '<em>Data</em>'.

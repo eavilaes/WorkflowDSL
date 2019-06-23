@@ -18,7 +18,8 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see WorkflowMM.WorkflowMMPackage#getServiceTask()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='TaskMustBeLinkedFromATask TaskMustBeLinkedToATask'"
+ * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='TaskMustBeLinkedFromATask TaskMustBeLinkedToATask'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot TaskMustBeLinkedFromATask='\n\t\t\tself.linkedFrom->size()=1' TaskMustBeLinkedToATask='\n\t\t\tself.linkedTo->size()=1'"
  * @generated
  */

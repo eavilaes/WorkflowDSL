@@ -1147,6 +1147,88 @@ public interface WorkflowMMPackage extends EPackage {
 	int ST_MAKE_CALCULATION_FEATURE_COUNT = SERVICE_TASK_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link WorkflowMM.impl.ST_ExternalServiceImpl <em>ST External Service</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see WorkflowMM.impl.ST_ExternalServiceImpl
+	 * @see WorkflowMM.impl.WorkflowMMPackageImpl#getST_ExternalService()
+	 * @generated
+	 */
+	int ST_EXTERNAL_SERVICE = 16;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ST_EXTERNAL_SERVICE__ID = SERVICE_TASK__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ST_EXTERNAL_SERVICE__NAME = SERVICE_TASK__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ST_EXTERNAL_SERVICE__DESCRIPTION = SERVICE_TASK__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Linked To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ST_EXTERNAL_SERVICE__LINKED_TO = SERVICE_TASK__LINKED_TO;
+
+	/**
+	 * The feature id for the '<em><b>Linked From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ST_EXTERNAL_SERVICE__LINKED_FROM = SERVICE_TASK__LINKED_FROM;
+
+	/**
+	 * The feature id for the '<em><b>Requires</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ST_EXTERNAL_SERVICE__REQUIRES = SERVICE_TASK__REQUIRES;
+
+	/**
+	 * The feature id for the '<em><b>Produces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ST_EXTERNAL_SERVICE__PRODUCES = SERVICE_TASK__PRODUCES;
+
+	/**
+	 * The number of structural features of the '<em>ST External Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ST_EXTERNAL_SERVICE_FEATURE_COUNT = SERVICE_TASK_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link WorkflowMM.impl.DataImpl <em>Data</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1154,7 +1236,7 @@ public interface WorkflowMMPackage extends EPackage {
 	 * @see WorkflowMM.impl.WorkflowMMPackageImpl#getData()
 	 * @generated
 	 */
-	int DATA = 16;
+	int DATA = 17;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1200,7 +1282,7 @@ public interface WorkflowMMPackage extends EPackage {
 	 * @see WorkflowMM.impl.WorkflowMMPackageImpl#getTypeOfData()
 	 * @generated
 	 */
-	int TYPE_OF_DATA = 17;
+	int TYPE_OF_DATA = 18;
 
 
 	/**
@@ -1683,6 +1765,16 @@ public interface WorkflowMMPackage extends EPackage {
 	EClass getST_MakeCalculation();
 
 	/**
+	 * Returns the meta object for class '{@link WorkflowMM.ST_ExternalService <em>ST External Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>ST External Service</em>'.
+	 * @see WorkflowMM.ST_ExternalService
+	 * @generated
+	 */
+	EClass getST_ExternalService();
+
+	/**
 	 * Returns the meta object for class '{@link WorkflowMM.Data <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2149,6 +2241,16 @@ public interface WorkflowMMPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ST_MAKE_CALCULATION = eINSTANCE.getST_MakeCalculation();
+
+		/**
+		 * The meta object literal for the '{@link WorkflowMM.impl.ST_ExternalServiceImpl <em>ST External Service</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see WorkflowMM.impl.ST_ExternalServiceImpl
+		 * @see WorkflowMM.impl.WorkflowMMPackageImpl#getST_ExternalService()
+		 * @generated
+		 */
+		EClass ST_EXTERNAL_SERVICE = eINSTANCE.getST_ExternalService();
 
 		/**
 		 * The meta object literal for the '{@link WorkflowMM.impl.DataImpl <em>Data</em>}' class.

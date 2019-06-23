@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class ServiceTaskImpl extends TaskImpl implements ServiceTask {
+public abstract class ServiceTaskImpl extends TaskImpl implements ServiceTask {
 	/**
 	 * The cached value of the '{@link #getRequires() <em>Requires</em>}' reference list.
 	 * <!-- begin-user-doc -->

@@ -258,6 +258,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ST_SignDocument" eSuperTypes="#//ServiceTask"/>
   <eClassifiers xsi:type="ecore:EClass" name="ST_ValidateData" eSuperTypes="#//ServiceTask"/>
   <eClassifiers xsi:type="ecore:EClass" name="ST_MakeCalculation" eSuperTypes="#//ServiceTask"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ST_ExternalService" eSuperTypes="#//ServiceTask"/>
   <eClassifiers xsi:type="ecore:EClass" name="Data">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
@@ -270,7 +271,6 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ST_ExternalService" eSuperTypes="#//ServiceTask"/>
 </ecore:EPackage>

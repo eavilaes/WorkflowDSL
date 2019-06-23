@@ -31,7 +31,7 @@
     <genClasses ecoreClass="WorkflowMM.ecore#//UserTask">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WorkflowMM.ecore#//UserTask/requires"/>
     </genClasses>
-    <genClasses ecoreClass="WorkflowMM.ecore#//ServiceTask">
+    <genClasses image="false" ecoreClass="WorkflowMM.ecore#//ServiceTask">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WorkflowMM.ecore#//ServiceTask/requires"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WorkflowMM.ecore#//ServiceTask/produces"/>
     </genClasses>
@@ -66,6 +66,7 @@
     <genClasses ecoreClass="WorkflowMM.ecore#//ST_SignDocument"/>
     <genClasses ecoreClass="WorkflowMM.ecore#//ST_ValidateData"/>
     <genClasses ecoreClass="WorkflowMM.ecore#//ST_MakeCalculation"/>
+    <genClasses ecoreClass="WorkflowMM.ecore#//ST_ExternalService"/>
     <genClasses ecoreClass="WorkflowMM.ecore#//Data">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WorkflowMM.ecore#//Data/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WorkflowMM.ecore#//Data/text"/>

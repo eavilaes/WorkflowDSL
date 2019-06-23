@@ -60,7 +60,6 @@ public class WorkflowMMFactoryImpl extends EFactoryImpl implements WorkflowMMFac
 			case WorkflowMMPackage.WORKFLOW: return createWorkflow();
 			case WorkflowMMPackage.ACTOR: return createActor();
 			case WorkflowMMPackage.USER_TASK: return createUserTask();
-			case WorkflowMMPackage.SERVICE_TASK: return createServiceTask();
 			case WorkflowMMPackage.SEND_MSG_TASK: return createSendMsgTask();
 			case WorkflowMMPackage.RECEIVE_MSG_TASK: return createReceiveMsgTask();
 			case WorkflowMMPackage.INFORMATION: return createInformation();
@@ -72,6 +71,7 @@ public class WorkflowMMFactoryImpl extends EFactoryImpl implements WorkflowMMFac
 			case WorkflowMMPackage.ST_SIGN_DOCUMENT: return createST_SignDocument();
 			case WorkflowMMPackage.ST_VALIDATE_DATA: return createST_ValidateData();
 			case WorkflowMMPackage.ST_MAKE_CALCULATION: return createST_MakeCalculation();
+			case WorkflowMMPackage.ST_EXTERNAL_SERVICE: return createST_ExternalService();
 			case WorkflowMMPackage.DATA: return createData();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -136,16 +136,6 @@ public class WorkflowMMFactoryImpl extends EFactoryImpl implements WorkflowMMFac
 	public UserTask createUserTask() {
 		UserTaskImpl userTask = new UserTaskImpl();
 		return userTask;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ServiceTask createServiceTask() {
-		ServiceTaskImpl serviceTask = new ServiceTaskImpl();
-		return serviceTask;
 	}
 
 	/**
@@ -256,6 +246,16 @@ public class WorkflowMMFactoryImpl extends EFactoryImpl implements WorkflowMMFac
 	public ST_MakeCalculation createST_MakeCalculation() {
 		ST_MakeCalculationImpl sT_MakeCalculation = new ST_MakeCalculationImpl();
 		return sT_MakeCalculation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ST_ExternalService createST_ExternalService() {
+		ST_ExternalServiceImpl sT_ExternalService = new ST_ExternalServiceImpl();
+		return sT_ExternalService;
 	}
 
 	/**

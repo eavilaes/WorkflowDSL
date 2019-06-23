@@ -10,6 +10,7 @@ import WorkflowMM.File;
 import WorkflowMM.Information;
 import WorkflowMM.Option;
 import WorkflowMM.ReceiveMsgTask;
+import WorkflowMM.ST_ExternalService;
 import WorkflowMM.ST_MakeCalculation;
 import WorkflowMM.ST_PrintDocument;
 import WorkflowMM.ST_SignDocument;
@@ -152,6 +153,13 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 	 * @generated
 	 */
 	private EClass sT_MakeCalculationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sT_ExternalServiceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -647,6 +655,15 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getST_ExternalService() {
+		return sT_ExternalServiceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getData() {
 		return dataEClass;
 	}
@@ -776,6 +793,8 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 
 		sT_MakeCalculationEClass = createEClass(ST_MAKE_CALCULATION);
 
+		sT_ExternalServiceEClass = createEClass(ST_EXTERNAL_SERVICE);
+
 		dataEClass = createEClass(DATA);
 		createEAttribute(dataEClass, DATA__ID);
 		createEAttribute(dataEClass, DATA__TEXT);
@@ -823,6 +842,7 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 		sT_SignDocumentEClass.getESuperTypes().add(this.getServiceTask());
 		sT_ValidateDataEClass.getESuperTypes().add(this.getServiceTask());
 		sT_MakeCalculationEClass.getESuperTypes().add(this.getServiceTask());
+		sT_ExternalServiceEClass.getESuperTypes().add(this.getServiceTask());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(workflowEClass, Workflow.class, "Workflow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -844,7 +864,7 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 		initEClass(userTaskEClass, UserTask.class, "UserTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUserTask_Requires(), this.getInformation(), null, "requires", null, 1, -1, UserTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(serviceTaskEClass, ServiceTask.class, "ServiceTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(serviceTaskEClass, ServiceTask.class, "ServiceTask", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getServiceTask_Requires(), this.getInformation(), null, "requires", null, 1, -1, ServiceTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getServiceTask_Produces(), this.getInformation(), null, "produces", null, 1, -1, ServiceTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -885,6 +905,8 @@ public class WorkflowMMPackageImpl extends EPackageImpl implements WorkflowMMPac
 		initEClass(sT_ValidateDataEClass, ST_ValidateData.class, "ST_ValidateData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(sT_MakeCalculationEClass, ST_MakeCalculation.class, "ST_MakeCalculation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(sT_ExternalServiceEClass, ST_ExternalService.class, "ST_ExternalService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getData_Id(), ecorePackage.getEString(), "id", null, 1, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

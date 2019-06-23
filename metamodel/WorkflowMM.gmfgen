@@ -139,6 +139,39 @@
         </modelFacet>
       </labels>
     </childNodes>
+    <childNodes visualID="3015" editPartClassName="ST_ExternalServiceEditPart" itemSemanticEditPolicyClassName="ST_ExternalServiceItemSemanticEditPolicy" canonicalEditPolicyClassName="ST_ExternalServiceCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ST_ExternalServiceGraphicalNodeEditPolicy" createCommandClassName="ST_ExternalServiceCreateCommand" containers="//@diagram/@compartments.0">
+      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ST_ExternalServiceEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ST_ExternalServiceFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ST_ExternalServiceFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureST_ExternalServiceLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTaskIdLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTaskDescriptionLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ST_ExternalServiceFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureST_ExternalServiceLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureST_ExternalServiceLabelFigure.setText(&quot;ST_ExternalService&quot;);&#xA;&#xA;this.add(fFigureST_ExternalServiceLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureTaskIdLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTaskIdLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTaskIdLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureTaskDescriptionLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTaskDescriptionLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTaskDescriptionLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureST_ExternalServiceLabelFigure() {&#xA;&#x9;&#x9;return fFigureST_ExternalServiceLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTaskIdLabelFigure() {&#xA;&#x9;&#x9;return fFigureTaskIdLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTaskDescriptionLabelFigure() {&#xA;&#x9;&#x9;return fFigureTaskDescriptionLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 255, 255, 255);&#xA;&#xA;">
+        <attributes xsi:type="gmfgen:StyleAttributes" fixedBackground="true"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass href="WorkflowMM.genmodel#//WorkflowMM/ST_ExternalService"/>
+        <containmentMetaFeature href="WorkflowMM.genmodel#//WorkflowMM/Actor/tasks"/>
+        <childMetaFeature href="WorkflowMM.genmodel#//WorkflowMM/Actor/tasks"/>
+      </modelFacet>
+      <labels visualID="5044" editPartClassName="ST_ExternalServiceNameEditPart" itemSemanticEditPolicyClassName="ST_ExternalServiceNameItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureST_ExternalServiceLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
+          <metaFeatures href="WorkflowMM.genmodel#//WorkflowMM/Task/name"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="5045" editPartClassName="ST_ExternalServiceIdEditPart" itemSemanticEditPolicyClassName="ST_ExternalServiceIdItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureTaskIdLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="id: {0}" editorPattern="id: {0}" editPattern="id: {0}">
+          <metaFeatures href="WorkflowMM.genmodel#//WorkflowMM/Task/id"/>
+        </modelFacet>
+      </labels>
+      <labels visualID="5046" editPartClassName="ST_ExternalServiceDescriptionEditPart" itemSemanticEditPolicyClassName="ST_ExternalServiceDescriptionItemSemanticEditPolicy">
+        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureTaskDescriptionLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="desc: {0}" editorPattern="desc: {0}" editPattern="desc: {0}">
+          <metaFeatures href="WorkflowMM.genmodel#//WorkflowMM/Task/description"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
     <childNodes visualID="3005" editPartClassName="UserTaskEditPart" itemSemanticEditPolicyClassName="UserTaskItemSemanticEditPolicy" canonicalEditPolicyClassName="UserTaskCanonicalEditPolicy" graphicalNodeEditPolicyClassName="UserTaskGraphicalNodeEditPolicy" createCommandClassName="UserTaskCreateCommand" containers="//@diagram/@compartments.0">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="UserTaskEditHelper"/>
@@ -165,39 +198,6 @@
         </modelFacet>
       </labels>
       <labels visualID="5032" editPartClassName="UserTaskDescriptionEditPart" itemSemanticEditPolicyClassName="UserTaskDescriptionItemSemanticEditPolicy">
-        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureTaskDescriptionLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="desc: {0}" editorPattern="desc: {0}" editPattern="desc: {0}">
-          <metaFeatures href="WorkflowMM.genmodel#//WorkflowMM/Task/description"/>
-        </modelFacet>
-      </labels>
-    </childNodes>
-    <childNodes visualID="3006" editPartClassName="ServiceTaskEditPart" itemSemanticEditPolicyClassName="ServiceTaskItemSemanticEditPolicy" canonicalEditPolicyClassName="ServiceTaskCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ServiceTaskGraphicalNodeEditPolicy" createCommandClassName="ServiceTaskCreateCommand" containers="//@diagram/@compartments.0">
-      <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ServiceTaskEditHelper"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ServiceTaskFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ServiceTaskFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureServiceTaskLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTaskIdLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureTaskDescriptionLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ServiceTaskFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureServiceTaskLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureServiceTaskLabelFigure.setText(&quot;ServiceTask&quot;);&#xA;&#xA;this.add(fFigureServiceTaskLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureTaskIdLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTaskIdLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTaskIdLabelFigure);&#xA;&#xA;&#xA;&#xA;fFigureTaskDescriptionLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureTaskDescriptionLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureTaskDescriptionLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureServiceTaskLabelFigure() {&#xA;&#x9;&#x9;return fFigureServiceTaskLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTaskIdLabelFigure() {&#xA;&#x9;&#x9;return fFigureTaskIdLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureTaskDescriptionLabelFigure() {&#xA;&#x9;&#x9;return fFigureTaskDescriptionLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 255, 255, 255);&#xA;&#xA;">
-        <attributes xsi:type="gmfgen:StyleAttributes" fixedBackground="true"/>
-      </viewmap>
-      <modelFacet>
-        <metaClass href="WorkflowMM.genmodel#//WorkflowMM/ServiceTask"/>
-        <containmentMetaFeature href="WorkflowMM.genmodel#//WorkflowMM/Actor/tasks"/>
-        <childMetaFeature href="WorkflowMM.genmodel#//WorkflowMM/Actor/tasks"/>
-      </modelFacet>
-      <labels visualID="5011" editPartClassName="ServiceTaskNameEditPart" itemSemanticEditPolicyClassName="ServiceTaskNameItemSemanticEditPolicy">
-        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureServiceTaskLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="WorkflowMM.genmodel#//WorkflowMM/Task/name"/>
-        </modelFacet>
-      </labels>
-      <labels visualID="5012" editPartClassName="ServiceTaskIdEditPart" itemSemanticEditPolicyClassName="ServiceTaskIdItemSemanticEditPolicy">
-        <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureTaskIdLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="id: {0}" editorPattern="id: {0}" editPattern="id: {0}">
-          <metaFeatures href="WorkflowMM.genmodel#//WorkflowMM/Task/id"/>
-        </modelFacet>
-      </labels>
-      <labels visualID="5033" editPartClassName="ServiceTaskDescriptionEditPart" itemSemanticEditPolicyClassName="ServiceTaskDescriptionItemSemanticEditPolicy">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureTaskDescriptionLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="desc: {0}" editorPattern="desc: {0}" editPattern="desc: {0}">
@@ -656,13 +656,13 @@
         <entries xsi:type="gmfgen:ToolEntry" title="Information" description="Create new Information" genNodes="//@diagram/@childNodes.10"/>
         <entries xsi:type="gmfgen:ToolEntry" title="Option" description="Create new Option" genNodes="//@diagram/@childNodes.11"/>
         <entries xsi:type="gmfgen:ToolEntry" title="ReceiveMsgTask" description="Create new ReceiveMsgTask" genNodes="//@diagram/@childNodes.7"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="ST_ExternalService" description="Create new ST_ExternalService" genNodes="//@diagram/@childNodes.4"/>
         <entries xsi:type="gmfgen:ToolEntry" title="ST_MakeCalculation" description="Create new ST_MakeCalculation" genNodes="//@diagram/@childNodes.3"/>
         <entries xsi:type="gmfgen:ToolEntry" title="ST_PrintDocument" description="Create new ST_PrintDocument" genNodes="//@diagram/@childNodes.0"/>
         <entries xsi:type="gmfgen:ToolEntry" title="ST_SignDocument" description="Create new ST_SignDocument" genNodes="//@diagram/@childNodes.1"/>
         <entries xsi:type="gmfgen:ToolEntry" title="ST_ValidateData" description="Create new ST_ValidateData" genNodes="//@diagram/@childNodes.2"/>
         <entries xsi:type="gmfgen:ToolEntry" title="SendMsgTask" description="Create new SendMsgTask" genNodes="//@diagram/@childNodes.6"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="ServiceTask" description="Create new ServiceTask" genNodes="//@diagram/@childNodes.5"/>
-        <entries xsi:type="gmfgen:ToolEntry" title="UserTask" description="Create new UserTask" genNodes="//@diagram/@childNodes.4"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="UserTask" description="Create new UserTask" genNodes="//@diagram/@childNodes.5"/>
       </groups>
       <groups title="Connections" collapse="true">
         <entries xsi:type="gmfgen:ToolEntry" title="Destination" description="Create new Destination" genLinks="//@diagram/@links.5"/>
@@ -790,8 +790,8 @@
     <childReferences parent="//@diagram" child="//@diagram/@links.2" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.2" child="//@diagram/@childNodes.10" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.10" child="//@diagram/@links.2" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@links.2" child="//@diagram/@childNodes.4" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@childNodes.4" child="//@diagram/@links.2" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.2" child="//@diagram/@childNodes.5" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.5" child="//@diagram/@links.2" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.3" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.3" child="//@diagram/@childNodes.10" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.10" child="//@diagram/@links.3" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
@@ -803,8 +803,8 @@
     <childReferences parent="//@diagram/@childNodes.2" child="//@diagram/@links.3" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.3" child="//@diagram/@childNodes.3" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.3" child="//@diagram/@links.3" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@links.3" child="//@diagram/@childNodes.5" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@childNodes.5" child="//@diagram/@links.3" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.3" child="//@diagram/@childNodes.4" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.4" child="//@diagram/@links.3" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.4" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.4" child="//@diagram/@childNodes.10" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.10" child="//@diagram/@links.4" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
@@ -816,8 +816,8 @@
     <childReferences parent="//@diagram/@childNodes.2" child="//@diagram/@links.4" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.4" child="//@diagram/@childNodes.3" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.3" child="//@diagram/@links.4" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@links.4" child="//@diagram/@childNodes.5" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
-    <childReferences parent="//@diagram/@childNodes.5" child="//@diagram/@links.4" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.4" child="//@diagram/@childNodes.4" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.4" child="//@diagram/@links.4" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.5" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.5" child="//@diagram/@childNodes.7" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.7" child="//@diagram/@links.5" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>

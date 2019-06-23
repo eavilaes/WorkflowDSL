@@ -1,20 +1,11 @@
-CREATE TABLE Selectapizza (
-	id INT AUTO_INCREMENT,
-	PRIMARY KEY (id)
-);
-CREATE TABLE Fillpersonalinfo (
+CREATE TABLE PersonalInformation (
 	id INT AUTO_INCREMENT,
 	Name VARCHAR,
-	Address VARCHAR,
-	CreditCard VARCHAR,
+	Email VARCHAR,
+	PhoneNumber VARCHAR,
 	PRIMARY KEY (id)
 );
-CREATE TABLE Satisfactionquestionnaire (
-	id INT AUTO_INCREMENT,
-	Satisfactiondegree VARCHAR,
-	PRIMARY KEY (id)
-);
-CREATE TABLE UploadDocuments (
+CREATE TABLE Order (
 	id INT AUTO_INCREMENT,
 	PRIMARY KEY (id)
 );

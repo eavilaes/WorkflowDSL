@@ -118,6 +118,8 @@ public class WorkflowMMValidator extends EObjectValidator {
 				return validateST_ValidateData((ST_ValidateData)value, diagnostics, context);
 			case WorkflowMMPackage.ST_MAKE_CALCULATION:
 				return validateST_MakeCalculation((ST_MakeCalculation)value, diagnostics, context);
+			case WorkflowMMPackage.ST_EXTERNAL_SERVICE:
+				return validateST_ExternalService((ST_ExternalService)value, diagnostics, context);
 			case WorkflowMMPackage.DATA:
 				return validateData((Data)value, diagnostics, context);
 			case WorkflowMMPackage.TYPE_OF_DATA:
@@ -766,6 +768,27 @@ public class WorkflowMMValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateTask_TaskMustBeLinkedToTheSameActor(sT_MakeCalculation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateServiceTask_TaskMustBeLinkedFromATask(sT_MakeCalculation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateServiceTask_TaskMustBeLinkedToATask(sT_MakeCalculation, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateST_ExternalService(ST_ExternalService sT_ExternalService, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(sT_ExternalService, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(sT_ExternalService, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(sT_ExternalService, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(sT_ExternalService, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(sT_ExternalService, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(sT_ExternalService, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(sT_ExternalService, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(sT_ExternalService, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(sT_ExternalService, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTask_TaskMustBeLinkedToTheSameActor(sT_ExternalService, diagnostics, context);
+		if (result || diagnostics != null) result &= validateServiceTask_TaskMustBeLinkedFromATask(sT_ExternalService, diagnostics, context);
+		if (result || diagnostics != null) result &= validateServiceTask_TaskMustBeLinkedToATask(sT_ExternalService, diagnostics, context);
 		return result;
 	}
 

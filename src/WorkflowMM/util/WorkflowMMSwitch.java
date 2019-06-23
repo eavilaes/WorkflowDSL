@@ -176,6 +176,14 @@ public class WorkflowMMSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case WorkflowMMPackage.ST_EXTERNAL_SERVICE: {
+				ST_ExternalService sT_ExternalService = (ST_ExternalService)theEObject;
+				T result = caseST_ExternalService(sT_ExternalService);
+				if (result == null) result = caseServiceTask(sT_ExternalService);
+				if (result == null) result = caseTask(sT_ExternalService);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case WorkflowMMPackage.DATA: {
 				Data data = (Data)theEObject;
 				T result = caseData(data);
@@ -423,6 +431,21 @@ public class WorkflowMMSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseST_MakeCalculation(ST_MakeCalculation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>ST External Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>ST External Service</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseST_ExternalService(ST_ExternalService object) {
 		return null;
 	}
 

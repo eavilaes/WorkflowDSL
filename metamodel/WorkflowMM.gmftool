@@ -84,6 +84,15 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="ST_ExternalService"
+          description="Create new ST_ExternalService">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="ST_MakeCalculation"
           description="Create new ST_MakeCalculation">
         <smallIcon
@@ -122,15 +131,6 @@
           xsi:type="gmftool:CreationTool"
           title="SendMsgTask"
           description="Create new SendMsgTask">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="ServiceTask"
-          description="Create new ServiceTask">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

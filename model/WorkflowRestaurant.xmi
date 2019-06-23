@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkflowMM:Workflow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:WorkflowMM="http://www.dmss.es/WorkflowMM" xsi:schemaLocation="http://www.dmss.es/WorkflowMM ../metamodel/WorkflowMM.ecore">
+  <actors id="A0" name="Customer">
+    <tasks xsi:type="WorkflowMM:Begin" id="T0" name="Begin" description="Start" linkedTo="//@actors.0/@tasks.1"/>
+    <tasks xsi:type="WorkflowMM:UserTask" id="T1" name="Personal Information" description="Request Personal information" linkedTo="//@actors.0/@tasks.3" linkedFrom="//@actors.0/@tasks.0" requires="//@actors.0/@informations.0"/>
+    <tasks xsi:type="WorkflowMM:UserTask" id="T2" name="Order" description="Select order" linkedTo="//@actors.0/@tasks.4" linkedFrom="//@actors.0/@tasks.3" requires="//@actors.0/@informations.2"/>
+    <tasks xsi:type="WorkflowMM:ST_ValidateData" id="T3" name="Validate user data" description="Validate the data introduced by the user" linkedTo="//@actors.0/@tasks.2" linkedFrom="//@actors.0/@tasks.1" requires="//@actors.0/@informations.0" produces="//@actors.0/@informations.1"/>
+    <tasks xsi:type="WorkflowMM:SendMsgTask" id="T4" name="SendOrder" description="send order to restaurant" linkedFrom="//@actors.0/@tasks.2" destination="//@actors.1/@tasks.3" requires="//@actors.0/@informations.2 //@actors.0/@informations.1" nextTask="//@actors.0/@tasks.5"/>
+    <tasks xsi:type="WorkflowMM:ReceiveMsgTask" id="T5" name="Receive confirmation" description="Receive confirmation from restaurant" linkedTo="//@actors.0/@tasks.6"/>
+    <tasks xsi:type="WorkflowMM:End" id="T6" name="End" description="end" linkedFrom="//@actors.0/@tasks.5"/>
+    <informations id="I0" name="Personal information">
+      <datas id="D0" name="Name"/>
+      <datas id="D1" name="Email"/>
+      <datas id="D2" name="Phone Number"/>
+    </informations>
+    <informations id="I1" name="UserToken">
+      <datas id="D3" name="UserToken"/>
+    </informations>
+    <informations id="I2" type="SELECT_OPTIONS" name="Order" multiple="true">
+      <options id="D4" title="Pizza Margarita"/>
+      <options id="D5" title="Pasta Carbonara"/>
+      <options id="D6" title="Tallarines con setas y bambú"/>
+    </informations>
+  </actors>
+  <actors id="A1" name="Restaurant">
+    <tasks xsi:type="WorkflowMM:SendMsgTask" id="T10" name="SendConfirmation" description="Send Signed Order" linkedFrom="//@actors.1/@tasks.2" destination="//@actors.0/@tasks.5" requires="//@actors.1/@informations.1" nextTask="//@actors.1/@tasks.3"/>
+    <tasks xsi:type="WorkflowMM:ST_SignDocument" id="T8" name="Sign order" description="Sign Order" linkedTo="//@actors.1/@tasks.2" linkedFrom="//@actors.1/@tasks.3" requires="//@actors.0/@informations.2" produces="//@actors.1/@informations.0"/>
+    <tasks xsi:type="WorkflowMM:ST_PrintDocument" id="T9" name="Print Order" description="Print" linkedTo="//@actors.1/@tasks.0" linkedFrom="//@actors.1/@tasks.1" requires="//@actors.1/@informations.0" produces="//@actors.1/@informations.1"/>
+    <tasks xsi:type="WorkflowMM:ReceiveMsgTask" id="T7" name="Receive Order" description="Receive Orders" linkedTo="//@actors.1/@tasks.1"/>
+    <informations id="I3" name="SignedOrder">
+      <datas id="10" name="OrderToken"/>
+    </informations>
+    <informations id="I4" name="Confirmation">
+      <datas id="11" name="OrderToken"/>
+      <datas id="12" name="UserToken"/>
+    </informations>
+  </actors>
+</WorkflowMM:Workflow>

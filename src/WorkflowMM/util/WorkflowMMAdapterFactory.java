@@ -132,6 +132,10 @@ public class WorkflowMMAdapterFactory extends AdapterFactoryImpl {
 				return createST_MakeCalculationAdapter();
 			}
 			@Override
+			public Adapter caseST_ExternalService(ST_ExternalService object) {
+				return createST_ExternalServiceAdapter();
+			}
+			@Override
 			public Adapter caseData(Data object) {
 				return createDataAdapter();
 			}
@@ -376,6 +380,20 @@ public class WorkflowMMAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createST_MakeCalculationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link WorkflowMM.ST_ExternalService <em>ST External Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see WorkflowMM.ST_ExternalService
+	 * @generated
+	 */
+	public Adapter createST_ExternalServiceAdapter() {
 		return null;
 	}
 

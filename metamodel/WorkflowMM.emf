@@ -63,7 +63,7 @@ class UserTask extends Task {
 @"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(TaskMustBeLinkedFromATask="
 			self.linkedFrom->size()=1", TaskMustBeLinkedToATask="
 			self.linkedTo->size()=1")
-class ServiceTask extends Task {
+abstract class ServiceTask extends Task {
 
   @gmf.link(label="req", target.decoration="arrow", color="255,0,0")
   ref Information[+] requires;
@@ -155,6 +155,10 @@ class ST_ValidateData extends ServiceTask {
 }
 
 class ST_MakeCalculation extends ServiceTask {
+}
+
+class ST_ExternalService extends ServiceTask {
+	
 }
 
 @gmf.node(label="name", label.icon="false", color="100,150,200")
