@@ -1,0 +1,6 @@
+CREATE TABLE Search (
+	id INT AUTO_INCREMENT,
+	name VARCHAR,
+	Warehouse VARCHAR,
+	PRIMARY KEY (id)
+);

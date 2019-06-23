@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkflowMM:Workflow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:WorkflowMM="http://www.dmss.es/WorkflowMM" xsi:schemaLocation="http://www.dmss.es/WorkflowMM ../metamodel/WorkflowMM.ecore">
+  <actors id="A0" name="User">
+    <tasks xsi:type="WorkflowMM:Begin" id="T0" name="Begin" description="Start" linkedTo="//@actors.0/@tasks.1"/>
+    <tasks xsi:type="WorkflowMM:UserTask" id="T1" name="Personal Information" description="Introduce personal info" linkedTo="//@actors.0/@tasks.2" linkedFrom="//@actors.0/@tasks.0" requires="//@actors.0/@informations.0"/>
+    <tasks xsi:type="WorkflowMM:SendMsgTask" id="T2" name="Send Personal Information" description="Send users information" linkedFrom="//@actors.0/@tasks.1" destination="//@actors.1/@tasks.0" requires="//@actors.0/@informations.0" nextTask="//@actors.0/@tasks.4"/>
+    <tasks xsi:type="WorkflowMM:End" id="T99" name="End" description="Finish" linkedFrom="//@actors.0/@tasks.4"/>
+    <tasks xsi:type="WorkflowMM:ReceiveMsgTask" id="T6" name="Receive Confirmation" description="Message received" linkedTo="//@actors.0/@tasks.3"/>
+    <informations id="I0" name="P Information">
+      <datas id="D0" name="Name"/>
+      <datas id="D1" name="Email"/>
+    </informations>
+  </actors>
+  <actors id="A1" name="Doctor">
+    <tasks xsi:type="WorkflowMM:ReceiveMsgTask" id="T3" name="Receive information" description="Receive info" linkedTo="//@actors.1/@tasks.1"/>
+    <tasks xsi:type="WorkflowMM:ST_PrintDocument" id="T4" name="Print Information" description="Print User Info" linkedTo="//@actors.1/@tasks.2" linkedFrom="//@actors.1/@tasks.0" requires="//@actors.0/@informations.0" produces="//@actors.1/@informations.0"/>
+    <tasks xsi:type="WorkflowMM:SendMsgTask" id="T5" name="Send Confirmation" description="Send Confirmation" linkedFrom="//@actors.1/@tasks.1" destination="//@actors.0/@tasks.4" requires="//@actors.1/@informations.0" nextTask="//@actors.1/@tasks.0"/>
+    <informations id="I1" type="FILE" name="Confirmation">
+      <files id="D5" path="Confirm/file" title="Confirm File"/>
+    </informations>
+  </actors>
+</WorkflowMM:Workflow>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkflowMM:Workflow
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:WorkflowMM="http://www.dmss.es/WorkflowMM"
+    xsi:schemaLocation="http://www.dmss.es/WorkflowMM ../metamodel/WorkflowMM.ecore">
+  <actors id="A0"
+      name="LocalShop">
+    <tasks xsi:type="WorkflowMM:Begin"
+        id="T0"
+        name="Begin"
+        description="start"
+        linkedTo="//@actors.0/@tasks.1"/>
+    <tasks xsi:type="WorkflowMM:UserTask"
+        id="T1"
+        name="Search"
+        description="1"
+        linkedTo="//@actors.0/@tasks.2"
+        linkedFrom="//@actors.0/@tasks.0"
+        requires="//@actors.0/@informations.0"/>
+    <tasks xsi:type="WorkflowMM:SendMsgTask"
+        id="T2"
+        name="Send Search"
+        description="2"
+        linkedFrom="//@actors.0/@tasks.1"
+        destination="//@actors.1/@tasks.1"
+        requires="//@actors.0/@informations.0"
+        nextTask="//@actors.0/@tasks.3"/>
+    <tasks xsi:type="WorkflowMM:ReceiveMsgTask"
+        id="T12"
+        name="Receive data"
+        description="12"
+        linkedTo="//@actors.0/@tasks.5"/>
+    <tasks xsi:type="WorkflowMM:End"
+        id="T14"
+        name="End"
+        description="14"
+        linkedFrom="//@actors.0/@tasks.5"/>
+    <tasks xsi:type="WorkflowMM:ST_PrintDocument"
+        id="T13"
+        name="Print Response"
+        description="13"
+        linkedTo="//@actors.0/@tasks.4"
+        linkedFrom="//@actors.0/@tasks.3"
+        requires="//@actors.1/@informations.1"
+        produces="//@actors.0/@informations.1"/>
+    <informations
+        id="I0"
+        name="Search params">
+      <datas
+          id="D0"
+          name="name"/>
+      <datas
+          id="D1"
+          name="Warehouse"/>
+    </informations>
+    <informations
+        id="I4"
+        type="UPLOAD_FILES"
+        name="Printed Doc">
+      <files
+          id="15"
+          path="/Printed/Ldoc"
+          title="printed Doc"/>
+    </informations>
+  </actors>
+  <actors id="A1"
+      name="Distributor">
+    <tasks xsi:type="WorkflowMM:SendMsgTask"
+        id="T5"
+        name="Send search"
+        description="5"
+        linkedFrom="//@actors.1/@tasks.3"
+        destination="//@actors.2/@tasks.1"
+        nextTask="//@actors.1/@tasks.2"/>
+    <tasks xsi:type="WorkflowMM:ReceiveMsgTask"
+        id="T3"
+        name="Receive Search"
+        description="3"
+        linkedTo="//@actors.1/@tasks.3"/>
+    <tasks xsi:type="WorkflowMM:ReceiveMsgTask"
+        id="T9"
+        name="Receive Information"
+        description="9"
+        linkedTo="//@actors.1/@tasks.5"/>
+    <tasks xsi:type="WorkflowMM:ST_ValidateData"
+        id="T4"
+        name="Validate Params"
+        description="4"
+        linkedTo="//@actors.1/@tasks.0"
+        linkedFrom="//@actors.1/@tasks.1"
+        requires="//@actors.0/@informations.0"
+        produces="//@actors.1/@informations.0"/>
+    <tasks xsi:type="WorkflowMM:SendMsgTask"
+        id="T11"
+        name="Send response"
+        description="11"
+        linkedFrom="//@actors.1/@tasks.5"
+        destination="//@actors.0/@tasks.3"
+        requires="//@actors.1/@informations.1"
+        nextTask="//@actors.1/@tasks.1"/>
+    <tasks xsi:type="WorkflowMM:ST_SignDocument"
+        id="T10"
+        name="Sign response"
+        description="10"
+        linkedTo="//@actors.1/@tasks.4"
+        linkedFrom="//@actors.1/@tasks.2"
+        requires="//@actors.2/@informations.0"
+        produces="//@actors.1/@informations.1"/>
+    <informations
+        id="I1"
+        name="SearchToken">
+      <datas
+          id="D2"
+          name="Token"/>
+    </informations>
+    <informations
+        id="I3"
+        type="UPLOAD_FILES"
+        name="Signed Response">
+      <files
+          id="D10"
+          path="/responses/lResp"
+          title="Response"/>
+    </informations>
+  </actors>
+  <actors id="A2"
+      name="Warehouse">
+    <tasks xsi:type="WorkflowMM:SendMsgTask"
+        id="T8"
+        name="Send"
+        description="8"
+        linkedFrom="//@actors.2/@tasks.2"
+        destination="//@actors.1/@tasks.2"
+        requires="//@actors.2/@informations.0"
+        nextTask="//@actors.2/@tasks.1"/>
+    <tasks xsi:type="WorkflowMM:ReceiveMsgTask"
+        id="T6"
+        name="Receive"
+        description="6"
+        linkedTo="//@actors.2/@tasks.2"/>
+    <tasks xsi:type="WorkflowMM:ST_ValidateData"
+        id="T7"
+        name="Validate Search"
+        description="7"
+        linkedTo="//@actors.2/@tasks.0"
+        linkedFrom="//@actors.2/@tasks.1"
+        requires="//@actors.1/@informations.0"
+        produces="//@actors.2/@informations.0"/>
+    <informations
+        id="I2"
+        name="Description">
+      <datas
+          id="D3"
+          name="name"/>
+      <datas
+          id="D4"
+          name="Description"/>
+    </informations>
+  </actors>
+</WorkflowMM:Workflow>
