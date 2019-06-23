@@ -103,7 +103,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceTask" eSuperTypes="#//Task">
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceTask" abstract="true" eSuperTypes="#//Task">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="TaskMustBeLinkedFromATask TaskMustBeLinkedToATask"/>
     </eAnnotations>
@@ -272,4 +272,5 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ST_ExternalService" eSuperTypes="#//ServiceTask"/>
 </ecore:EPackage>

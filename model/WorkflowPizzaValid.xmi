@@ -26,7 +26,7 @@
         linkedTo="//@actors.0/@tasks.3"
         linkedFrom="//@actors.0/@tasks.1"
         requires="//@actors.0/@informations.2"/>
-    <tasks xsi:type="WorkflowMM:ServiceTask"
+    <tasks xsi:type="WorkflowMM:ST_MakeCalculation"
         id="04"
         name="Calculate total"
         description="Calculate total amount"
@@ -110,7 +110,8 @@
         name="result data form">
       <datas
           id="4"
-          text="Result"/>
+          text="Result"
+          name="data"/>
     </informations>
     <informations
         id="10"
@@ -134,7 +135,7 @@
         description="The restaurant receives a pizza order"
         linkedTo="//@actors.1/@tasks.1"
         linkedFrom="//@actors.0/@tasks.4"/>
-    <tasks xsi:type="WorkflowMM:ServiceTask"
+    <tasks xsi:type="WorkflowMM:ST_PrintDocument"
         id="6"
         name="Print pizza order"
         description="Print the pizza order to be cooked"
